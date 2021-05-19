@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FBSDKLoginKit
-import GoogleSignIn
 import NVActivityIndicatorView
 
 class RegisterViewController: UIViewController,UITextFieldDelegate, UIScrollViewDelegate, NVActivityIndicatorViewable, GIDSignInUIDelegate, GIDSignInDelegate {

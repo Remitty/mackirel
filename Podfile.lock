@@ -119,6 +119,7 @@ PODS:
   - NVActivityIndicatorView/Base (5.1.1)
   - OpalImagePicker (3.0.0)
   - PromisesObjC (1.2.12)
+  - RangeSeekSlider (1.8.0)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -148,6 +149,7 @@ DEPENDENCIES:
   - NotificationBannerSwift
   - NVActivityIndicatorView
   - OpalImagePicker
+  - RangeSeekSlider
   - SDWebImage
   - SlideMenuControllerSwift
   - SwiftCheckboxDialog
@@ -187,6 +189,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - OpalImagePicker
     - PromisesObjC
+    - RangeSeekSlider
     - SDWebImage
     - SlideMenuControllerSwift
     - SnapKit
@@ -226,6 +229,7 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
@@ -234,6 +238,6 @@ SPEC CHECKSUMS:
   "UITextField+Shake": 298ac5a0f239d731bdab999b19b628c956ca0ac3
   XLPagerTabStrip: 63166e21c9844fa30f2d95d30f335e73be5caf22
 
-PODFILE CHECKSUM: 2728c39ca60611bbc4bf161e319dbb583870fadb
+PODFILE CHECKSUM: b5ee8bc9708d042354f77e1f823b92ac58730e62
 
 COCOAPODS: 1.10.1
