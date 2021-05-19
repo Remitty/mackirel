@@ -13,11 +13,11 @@ import DeviceKit
 class Constants {
     struct  URL {
         
-        static let ipAddress =  "Your base url"
+        static let ipAddress =  "https://www.joiintapp.com/"
         
        
         
-        static let baseUrl =  ipAddress + "wp-json/adforest/v1/"
+        static let baseUrl =  ipAddress + "api/user/market/"
         
         static let homeData = "home"
         static let category = "ad_post/category"
