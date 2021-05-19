@@ -24,7 +24,7 @@ class Constants {
         static let locationDetail = "terms"
         
         static let settings = "settings"
-        static let logIn = "login"
+        static let logIn = "oauth/token"
         static let register = "register"
         static let forgotPassword = "forgot"
         static let userConfirmation = "login/confirm"
