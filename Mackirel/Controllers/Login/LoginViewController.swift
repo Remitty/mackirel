@@ -166,7 +166,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NVActivityIndi
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if UserHandler.sharedInstance.objLoginDetails != nil {
             let objData = UserHandler.sharedInstance.objLoginDetails
            
@@ -311,7 +311,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NVActivityIndi
         self.adForest_logIn()
     }
     
-    func adForest_logIn() {
+    func logIn() {
         guard let email = txtEmail.text else {
             return
         }
@@ -488,7 +488,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NVActivityIndi
     //MARK:- API Calls
     
     //Login Data Get Request
-    func adForest_loginDetails() {
+    func loginDetails() {
         self.showLoader()
         UserHandler.loginDetails(success: { (successResponse) in
             self.stopAnimating()
@@ -507,7 +507,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NVActivityIndi
     }
     
     // Login User
-    func adForest_loginUser(parameters: NSDictionary) {
+    func loginUser(parameters: NSDictionary) {
         self.showLoader()
         UserHandler.loginUser(parameter: parameters , success: { (successResponse) in
             self.stopAnimating()

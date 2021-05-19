@@ -152,7 +152,7 @@ class LocationDetailController: UIViewController, UICollectionViewDelegate, UICo
     
     //MARK:- API Calls
     
-    func adForest_locationDetails(parameter: NSDictionary) {
+    func locationDetails(parameter: NSDictionary) {
         self.showLoader()
         AddsHandler.locationDetails(parameter: parameter, success: { (successResponse) in
             self.stopAnimating()
@@ -174,7 +174,7 @@ class LocationDetailController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     //LoadMore Data
-    func adForest_loadMoreData(parameter: NSDictionary) {
+    func loadMoreData(parameter: NSDictionary) {
         self.showLoader()
         AddsHandler.locationDetails(parameter: parameter, success: { (successResponse) in
             self.stopAnimating()

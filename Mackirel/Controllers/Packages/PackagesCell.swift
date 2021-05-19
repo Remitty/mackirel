@@ -98,7 +98,7 @@ class PackagesCell: UITableViewCell {
         }
     }
     
-    func adForest_settingsData() {
+    func settingsData() {
         if let settingsInfo = defaults.object(forKey: "settings") {
             settingObject = NSKeyedUnarchiver.unarchiveObject(with: settingsInfo as! Data) as! [String : Any]
             

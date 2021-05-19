@@ -163,7 +163,7 @@ class LeftController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if let mainColor = defaults.string(forKey: "mainColor") {
             self.containerViewImage.backgroundColor = Constants.hexStringToUIColor(hex: mainColor)
         }

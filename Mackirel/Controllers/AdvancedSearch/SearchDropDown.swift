@@ -144,7 +144,7 @@ class SearchDropDown: UITableViewCell, NVActivityIndicatorViewable , SubCategory
     }
     
     //MARK:- API Call
-    func adForest_subCategory(url: String ,param: NSDictionary) {
+    func subCategory(url: String ,param: NSDictionary) {
         let searchObj = AdvancedSearchController()
         searchObj.showLoader()
         AddsHandler.subCategory(url: url, parameter: param, success: { (successResponse) in
@@ -171,7 +171,7 @@ class SearchDropDown: UITableViewCell, NVActivityIndicatorViewable , SubCategory
     }
     
     //Dynamic Search
-    func adForest_dynamicSearch(param: NSDictionary) {
+    func dynamicSearch(param: NSDictionary) {
         let searchObj = AdvancedSearchController()
         searchObj.showLoader()
         AddsHandler.dynamicSearch(parameter: param, success: { (successResponse) in

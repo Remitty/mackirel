@@ -101,7 +101,7 @@ class BlockedUserController: UIViewController, UITableViewDelegate, UITableViewD
     
     //MARK:- API Call
     
-    func adForest_getBlockedUsersList() {
+    func getBlockedUsersList() {
         self.showLoader()
         UserHandler.blockedUsersList(success: { (successResponse) in
             self.stopAnimating()
@@ -122,7 +122,7 @@ class BlockedUserController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     //Un Block User
-    func adForest_UnBlockUser(parameter: NSDictionary) {
+    func UnBlockUser(parameter: NSDictionary) {
         self.showLoader()
         UserHandler.unBlockUser(parameter: parameter, success: { (successResponse) in
             self.stopAnimating()

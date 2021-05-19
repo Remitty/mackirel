@@ -78,7 +78,7 @@ class PagesController: UIViewController, NVActivityIndicatorViewable, UIWebViewD
     }
     
     //MARK:- API Call
-    func adForest_pagesData(param: NSDictionary) {
+    func pagesData(param: NSDictionary) {
         self.showLoader()
         UserHandler.termsConditions(parameter: param, success: { (successResponse) in
             self.stopAnimating()

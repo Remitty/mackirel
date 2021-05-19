@@ -83,7 +83,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, NVAct
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if UserHandler.sharedInstance.objForgotDetails != nil {
             let objData = UserHandler.sharedInstance.objForgotDetails
             
@@ -117,7 +117,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, NVAct
         }
     }
     
-    func adForest_populateUserConfirmationData() {
+    func populateUserConfirmationData() {
         if UserHandler.sharedInstance.userConfirmationData != nil {
               let objData =  UserHandler.sharedInstance.userConfirmationData
         
@@ -176,7 +176,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, NVAct
     
     //MARK:- API Call
     
-    func adForest_ForgotData() {
+    func ForgotData() {
         self.showLoader()
         UserHandler.forgotDetails(success: { (successResponse) in
             self.stopAnimating()
@@ -197,7 +197,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, NVAct
     
     // User Forgot Password
     
-    func adForest_userForgot(param: NSDictionary) {
+    func userForgot(param: NSDictionary) {
         self.showLoader()
         UserHandler.forgotUser(parameter: param, success: { (successResponse) in
             self.stopAnimating()
@@ -236,7 +236,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, NVAct
     }
     
     //User Confirmation Post
-    func adForest_userConfirmed(parameter: NSDictionary) {
+    func userConfirmed(parameter: NSDictionary) {
         self.showLoader()
         UserHandler.userConfirmationPost(parameter: parameter, success: { (successresponse) in
             self.stopAnimating()

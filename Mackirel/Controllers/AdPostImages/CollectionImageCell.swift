@@ -113,7 +113,7 @@ class CollectionImageCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     }
     
     //MARK:- API Call
-    func adForest_deleteImage(param: NSDictionary) {
+    func deleteImage(param: NSDictionary) {
         let mainClass = AdPostImagesController()
         mainClass.showLoader()
         AddsHandler.adPostDeleteImages(param: param, success: { (successResponse) in

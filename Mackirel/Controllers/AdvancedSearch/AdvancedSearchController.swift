@@ -601,7 +601,7 @@ class AdvancedSearchController: UIViewController, NVActivityIndicatorViewable, U
     }
     //MARK:- API Calls
     
-    func adForest_getSearchData() {
+    func getSearchData() {
         self.showLoader()
         AddsHandler.advanceSearch(success: { (successResponse) in
             self.stopAnimating()
@@ -624,7 +624,7 @@ class AdvancedSearchController: UIViewController, NVActivityIndicatorViewable, U
     }
     
     //post data to search
-    func adForest_postData(parameter : NSDictionary) {
+    func postData(parameter : NSDictionary) {
         self.showLoader()
         AddsHandler.searchData(parameter: parameter, success: { (successResponse) in
             self.stopAnimating()

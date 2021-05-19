@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/brian/work/market/mackirel.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:mackirel.xcodeproj">
    </FileRef>
    <FileRef

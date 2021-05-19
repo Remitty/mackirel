@@ -296,7 +296,7 @@ class CategoryController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     //MARK:- API Call
-    func adForest_categoryData(param: NSDictionary) {
+    func categoryData(param: NSDictionary) {
         self.showLoader()
         AddsHandler.categoryData(param: param, success: { (successResponse) in
             self.stopAnimating()
@@ -330,7 +330,7 @@ class CategoryController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func adForest_loadMoreData(param: NSDictionary) {
+    func loadMoreData(param: NSDictionary) {
         self.showLoader()
         AddsHandler.categoryData(param: param, success: { (successResponse) in
             self.stopAnimating()

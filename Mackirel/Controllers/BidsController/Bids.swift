@@ -224,7 +224,7 @@ class Bids: UIViewController, UITableViewDelegate, UITableViewDataSource, NVActi
     }
     
     //MARK:- API Calls
-    func adForest_submitBid(param:NSDictionary) {
+    func submitBid(param:NSDictionary) {
         self.showLoader()
         AddsHandler.postBid(param: param, success: { (successResponse) in
             self.stopAnimating()

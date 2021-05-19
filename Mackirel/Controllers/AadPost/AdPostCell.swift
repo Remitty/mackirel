@@ -187,7 +187,7 @@ class AdPostPopupCell : UITableViewCell, NVActivityIndicatorViewable, SubCategor
 
     //MARK:- API Call
     
-    func adForest_dynamicFields(param: NSDictionary) {
+    func dynamicFields(param: NSDictionary) {
         let adPostVC = AadPostController()
         adPostVC.showLoader()
         AddsHandler.adPostDynamicFields(parameter: param, success: { (successResponse) in
@@ -209,7 +209,7 @@ class AdPostPopupCell : UITableViewCell, NVActivityIndicatorViewable, SubCategor
     }
     
     // Sub category data
-    func adForest_subCategoryData(param: NSDictionary) {
+    func subCategoryData(param: NSDictionary) {
         let adPostVC = AadPostController()
         adPostVC.showLoader()
         AddsHandler.adPostSubcategory(parameter: param, success: { (successResponse) in

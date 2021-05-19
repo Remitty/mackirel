@@ -105,7 +105,7 @@ class SellersController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
 
     //MARK:- API Call
-    func adForest_sellerData() {
+    func sellerData() {
         self.showLoader()
         ShopHandler.sellerList(success: { (successResponse) in
             self.stopAnimating()
@@ -126,7 +126,7 @@ class SellersController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     
-    func adForest_loadMoreData(param: NSDictionary) {
+    func loadMoreData(param: NSDictionary) {
         self.showLoader()
         ShopHandler.sellerListLoadMore(param: param, success: { (successResponse) in
             self.stopAnimating()

@@ -167,7 +167,7 @@ class RatingReviewsController: UIViewController, UITableViewDelegate, UITableVie
     }
  
     //MARK:- API Call
-    func adForest_loadMoreData(param: NSDictionary) {
+    func loadMoreData(param: NSDictionary) {
         self.showLoader()
         AddsHandler.addDetailRating(parameter: param, success: { (successResponse) in
             self.stopAnimating()

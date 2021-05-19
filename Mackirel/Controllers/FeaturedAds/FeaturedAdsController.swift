@@ -112,7 +112,7 @@ class FeaturedAdsController: UIViewController, UIScrollViewDelegate, UICollectio
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if AddsHandler.sharedInstance.objMyAds != nil {
             let objData = AddsHandler.sharedInstance.objMyAds
             self.title = objData?.pageTitle
@@ -314,7 +314,7 @@ class FeaturedAdsController: UIViewController, UIScrollViewDelegate, UICollectio
     //MARK:- API Calls
     //Featured ads data
     
-    func adForest_featuredAdsData() {
+    func featuredAdsData() {
         self.showLoader()
         AddsHandler.featuredAds(success: { (successResponse) in
             self.stopAnimating()
@@ -340,7 +340,7 @@ class FeaturedAdsController: UIViewController, UIScrollViewDelegate, UICollectio
     }
     
     //Load More Data
-    func adForest_loadMoreData(param: NSDictionary) {
+    func loadMoreData(param: NSDictionary) {
         self.showLoader()
         AddsHandler.moreFeaturedAdsData(param: param, success: { (successResponse) in
             self.stopAnimating()

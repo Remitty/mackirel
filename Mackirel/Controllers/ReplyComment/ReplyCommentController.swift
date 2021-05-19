@@ -279,7 +279,7 @@ class ReplyCommentController: UIViewController , NVActivityIndicatorViewable{
     
     //MARK:- API Call
     //comment
-    func adForest_replyComment(param: NSDictionary) {
+    func replyComment(param: NSDictionary) {
         self.showLoader()
         AddsHandler.replyComment(parameters: param, success: { (successResponse) in
             self.stopAnimating()
@@ -302,7 +302,7 @@ class ReplyCommentController: UIViewController , NVActivityIndicatorViewable{
     }
     
     // pop up message reply
-    func adForest_popUpMessageReply(param: NSDictionary) {
+    func popUpMessageReply(param: NSDictionary) {
         self.showLoader()
         AddsHandler.popMsgReply(param: param, success: { (successResponse) in
             self.stopAnimating()
@@ -325,7 +325,7 @@ class ReplyCommentController: UIViewController , NVActivityIndicatorViewable{
     }
     
     // blog post comment
-    func adForest_blogPostComment(param: NSDictionary) {
+    func blogPostComment(param: NSDictionary) {
         self.showLoader()
         UserHandler.blogPostComment(parameter: param, success: { (successResponse) in
             self.stopAnimating()
@@ -347,7 +347,7 @@ class ReplyCommentController: UIViewController , NVActivityIndicatorViewable{
     }
     
     
-    func adForest_rating(param: NSDictionary) {
+    func rating(param: NSDictionary) {
         self.showLoader()
         AddsHandler.postUserRating(param: param, success: { (successResponse) in
             self.stopAnimating()

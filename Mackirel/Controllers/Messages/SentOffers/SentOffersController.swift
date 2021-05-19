@@ -136,7 +136,7 @@ class SentOffersController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     //MARK:- API Calls
-    func adForest_sentOffersData() {
+    func sentOffersData() {
         UserHandler.getSentOffersData(success: { (successResponse) in
             self.stopAnimating()
             self.refreshControl.endRefreshing()
@@ -167,7 +167,7 @@ class SentOffersController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    func adForest_loadMoreData(param: NSDictionary) {
+    func loadMoreData(param: NSDictionary) {
         UserHandler.moreSentOffersData(param: param, success: { (successResponse) in
             self.stopAnimating()
             self.refreshControl.endRefreshing()

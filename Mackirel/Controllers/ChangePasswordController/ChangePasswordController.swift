@@ -81,7 +81,7 @@ class ChangePasswordController: UIViewController, UITextFieldDelegate, NVActivit
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if dataToShow != nil {
             if let oldPass = dataToShow?.extraText.changePass.oldPass {
                 self.txtOldPassword.placeholder = oldPass
@@ -120,7 +120,7 @@ class ChangePasswordController: UIViewController, UITextFieldDelegate, NVActivit
         self.adForest_updatePass()
     }
 
-    func adForest_updatePass() {
+    func updatePass() {
         guard let oldPassword = txtOldPassword.text  else {
             return
         }
@@ -162,7 +162,7 @@ class ChangePasswordController: UIViewController, UITextFieldDelegate, NVActivit
 
     //MARK:- API Call
 
-    func adForest_changePassword(param: NSDictionary) {
+    func changePassword(param: NSDictionary) {
         self.showLoader()
         UserHandler.changePassword(parameter: param , success: { (successResponse) in
             self.stopAnimating()

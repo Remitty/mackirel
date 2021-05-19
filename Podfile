@@ -68,7 +68,7 @@ target 'mackirel' do
     pod 'OpalImagePicker'
     
     #ProgressBar
-    pod 'RangeSeekSlider'
+    #pod 'RangeSeekSlider'
    
    
     

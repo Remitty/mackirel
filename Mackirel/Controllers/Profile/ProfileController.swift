@@ -376,7 +376,7 @@ class ProfileController: UIViewController , UITableViewDelegate, UITableViewData
     //MARK:- API Call
     
     // Profile Details
-    func adForest_profileDetails() {
+    func profileDetails() {
         self.showLoader()
         UserHandler.profileGet(success: { (successResponse) in
             self.stopAnimating()
@@ -397,7 +397,7 @@ class ProfileController: UIViewController , UITableViewDelegate, UITableViewData
     }
     
     //Verify Phone Number
-    func adForest_phoneNumberVerify() {
+    func phoneNumberVerify() {
         self.showLoader()
         UserHandler.verifyPhone(success: { (successResponse) in
             self.stopAnimating()

@@ -204,7 +204,7 @@ class BlogController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     //MARK:- API Call
     
-    func adForest_blogData() {
+    func blogData() {
         self.showLoader()
         UserHandler.blogData(success: { (successResponse) in
             self.stopAnimating()
@@ -228,7 +228,7 @@ class BlogController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //more blog data
     
-    func adForest_loadMoreData(param: NSDictionary) {
+    func loadMoreData(param: NSDictionary) {
         self.showLoader()
         UserHandler.moreBlogData(parameter: param, success: { (successResponse) in
             self.stopAnimating()

@@ -383,7 +383,7 @@ class BlogDetailController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     //MARK:- API Call
     
-    func adForest_blogDetail(parameter: NSDictionary) {
+    func blogDetail(parameter: NSDictionary) {
         self.showLoader()
         UserHandler.blogDetail(parameter: parameter, success: { (successResponse) in
             self.stopAnimating()
@@ -410,7 +410,7 @@ class BlogDetailController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     // blog post comment
-    func adForest_blogPostComment(param: NSDictionary) {
+    func blogPostComment(param: NSDictionary) {
         self.showLoader()
         UserHandler.blogPostComment(parameter: param, success: { (successResponse) in
             self.stopAnimating()

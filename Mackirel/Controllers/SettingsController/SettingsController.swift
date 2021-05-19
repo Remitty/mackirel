@@ -272,7 +272,7 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
   
     
     //MARK:- API Calls
-    func adForest_getAppData() {
+    func getAppData() {
         self.showLoader()
         UserHandler.appSettings(success: { (successResponse) in
             self.stopAnimating()

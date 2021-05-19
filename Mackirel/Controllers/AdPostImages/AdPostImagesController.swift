@@ -325,7 +325,7 @@ class AdPostImagesController: UIViewController, UITableViewDelegate, UITableView
        // }
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if  AddsHandler.sharedInstance.objAdPost != nil {
             let objData = AddsHandler.sharedInstance.objAdPost
             if let titleText = objData?.data.title {
@@ -717,7 +717,7 @@ class AdPostImagesController: UIViewController, UITableViewDelegate, UITableView
     
     //post images
     
-    func adForest_uploadImages(param: NSDictionary, images: [UIImage]) {
+    func uploadImages(param: NSDictionary, images: [UIImage]) {
         //self.showLoader()
         uploadingProgressBar.progress = 0.0
         uploadingProgressBar.detailTextLabel.text = "0% Completed"

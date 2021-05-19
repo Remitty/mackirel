@@ -157,7 +157,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate, UIScrollView
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
 
-    func adForest_populateData() {
+    func populateData() {
         if UserHandler.sharedInstance.objregisterDetails != nil {
             let objData = UserHandler.sharedInstance.objregisterDetails
             
@@ -479,7 +479,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate, UIScrollView
     
     //MARK:- API Calls
     //Get Details Data
-    func adForest_registerData() {
+    func registerData() {
         self.showLoader()
         UserHandler.registerDetails(success: { (successResponse) in
             self.stopAnimating()
@@ -502,7 +502,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate, UIScrollView
     }
     
     //MARK:- User Register
-    func adForest_registerUser(param: NSDictionary) {
+    func registerUser(param: NSDictionary) {
         self.showLoader()
         UserHandler.registerUser(parameter: param, success: { (successResponse) in
             self.stopAnimating()
@@ -533,7 +533,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate, UIScrollView
     }
     
     // Login User With Social
-    func adForest_loginUser(parameters: NSDictionary) {
+    func loginUser(parameters: NSDictionary) {
         self.showLoader()
         UserHandler.loginUser(parameter: parameters , success: { (successResponse) in
             self.stopAnimating()

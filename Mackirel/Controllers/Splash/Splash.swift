@@ -45,7 +45,7 @@ class Splash: UIViewController, NVActivityIndicatorViewable {
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adForest_checkLogin() {
+    func checkLogin() {
         if defaults.bool(forKey: "isLogin") {
             guard let email = defaults.string(forKey: "email") else {
                 return
@@ -167,7 +167,7 @@ class Splash: UIViewController, NVActivityIndicatorViewable {
     }
     
     // Login User
-    func adForest_loginUser(parameters: NSDictionary) {
+    func loginUser(parameters: NSDictionary) {
         self.showLoader()
         UserHandler.loginUser(parameter: parameters , success: { (successResponse) in
             self.stopAnimating()

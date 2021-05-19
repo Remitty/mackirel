@@ -361,7 +361,7 @@ class EditProfileController: UIViewController, UITableViewDelegate, UITableViewD
     
     // Profile Details
     
-    func adForest_profileDetails() {
+    func profileDetails() {
         self.showLoader()
         UserHandler.profileGet(success: { (successResponse) in
             self.stopAnimating()
@@ -382,7 +382,7 @@ class EditProfileController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     //Delete Account
-    func adForest_deleteAccount(param: NSDictionary) {
+    func deleteAccount(param: NSDictionary) {
         self.showLoader()
         UserHandler.deleteAccount(param: param, success: { (successResponse) in
             self.stopAnimating()
@@ -520,7 +520,7 @@ class EditProfileCell: UITableViewCell, UITextFieldDelegate, GMSMapViewDelegate,
 
     //MARK:- Custom
     
-    @objc func adForest_imageGet() {
+    @objc func imageGet() {
         let alert = UIAlertController(title: titleAddPhotos, message: nil, preferredStyle: .alert)
         let cameraAction = UIAlertAction(title: titleCamera, style: .default) { (actionIn) in
             self.adForest_openCamera()
@@ -538,7 +538,7 @@ class EditProfileCell: UITableViewCell, UITextFieldDelegate, GMSMapViewDelegate,
         self.appDel.presentController(ShowVC: alert)
     }
     
-    func adForest_openCamera() {
+    func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
             imagePicker.delegate = self
@@ -551,7 +551,7 @@ class EditProfileCell: UITableViewCell, UITextFieldDelegate, GMSMapViewDelegate,
         }
     }
     
-    func adForest_openGallery() {
+    func openGallery() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -562,7 +562,7 @@ class EditProfileCell: UITableViewCell, UITextFieldDelegate, GMSMapViewDelegate,
         }
     }
     
-    func adForest_cancel() {
+    func cancel() {
         self.appDel.dissmissController()
     }
     
@@ -694,7 +694,7 @@ class EditProfileCell: UITableViewCell, UITextFieldDelegate, GMSMapViewDelegate,
         }
     }
     
-    func adForest_uploadImage() {
+    func uploadImage() {
        
         uploadingProgressBar.progress = 0.0
         uploadingProgressBar.detailTextLabel.text = "0% Completed"
@@ -728,7 +728,7 @@ class EditProfileCell: UITableViewCell, UITextFieldDelegate, GMSMapViewDelegate,
         }
     }
     
-    func adForest_updateProfile(params: NSDictionary) {
+    func updateProfile(params: NSDictionary) {
         let editprofile = EditProfileController()
         editprofile.showLoader()
         UserHandler.profileUpdate(parameters: params, success: { (successResponse) in

@@ -178,7 +178,7 @@ class PublicUserRatingController: UIViewController, UITableViewDelegate, UITable
         }
     }
     //MARK:- API Call
-    func adForest_ratingData(param: NSDictionary) {
+    func ratingData(param: NSDictionary) {
         self.showLoader()
         AddsHandler.ratingToPublicUser(parameter: param, success: { (successResponse) in
             self.stopAnimating()
@@ -205,7 +205,7 @@ class PublicUserRatingController: UIViewController, UITableViewDelegate, UITable
     }
     
     //MARK:- API Call
-    func adForest_rating(param: NSDictionary) {
+    func rating(param: NSDictionary) {
         self.showLoader()
         AddsHandler.postUserRating(param: param, success: { (successResponse) in
             self.stopAnimating()

@@ -121,7 +121,7 @@ class FavouriteAdsController: UIViewController, UIScrollViewDelegate, UICollecti
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if AddsHandler.sharedInstance.objMyAds != nil {
             let objData = AddsHandler.sharedInstance.objMyAds
             
@@ -172,7 +172,7 @@ class FavouriteAdsController: UIViewController, UIScrollViewDelegate, UICollecti
         }
     }
     
-    func adForest_settingsData() {
+    func settingsData() {
         if let settingsInfo = defaults.object(forKey: "settings") {
             settingObject = NSKeyedUnarchiver.unarchiveObject(with: settingsInfo as! Data) as! [String : Any]
             let model = SettingsRoot(fromDictionary: settingObject)
@@ -364,7 +364,7 @@ class FavouriteAdsController: UIViewController, UIScrollViewDelegate, UICollecti
     //MARK:- API Calls
     
     //Get Favourite Ads Data
-    func adForest_favouriteAdsData() {
+    func favouriteAdsData() {
         self.showLoader()
         AddsHandler.favouriteAds(success: { (successResponse) in
             self.stopAnimating()
@@ -389,7 +389,7 @@ class FavouriteAdsController: UIViewController, UIScrollViewDelegate, UICollecti
     }
     
     //Load More Data
-    func adForest_loadMoreData(param: NSDictionary) {
+    func loadMoreData(param: NSDictionary) {
         self.showLoader()
         AddsHandler.moreFavouriteData(param: param, success: { (successResponse) in
             self.stopAnimating()
@@ -412,7 +412,7 @@ class FavouriteAdsController: UIViewController, UIScrollViewDelegate, UICollecti
     
     
     //remove favourite
-    func adForest_removeFavourite(param: NSDictionary) {
+    func removeFavourite(param: NSDictionary) {
         self.showLoader()
         AddsHandler.removeFavAdd(parameter: param, success: { (successResponse) in
             self.stopAnimating()

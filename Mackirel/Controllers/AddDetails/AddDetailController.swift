@@ -142,7 +142,7 @@ class AddDetailController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if AddsHandler.sharedInstance.objAddDetails != nil {
             let objData = AddsHandler.sharedInstance.objAddDetails
             
@@ -1058,7 +1058,7 @@ class AddDetailController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     //MARK:- API Call
-    func adForest_addDetail(param: NSDictionary) {
+    func addDetail(param: NSDictionary) {
         self.showLoader()
         AddsHandler.addDetails(parameter: param, success: { (successResponse) in
             self.stopAnimating()
@@ -1120,7 +1120,7 @@ class AddDetailController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     //Make Add Feature
-    func adForest_makeAddFeature(Parameter: NSDictionary) {
+    func makeAddFeature(Parameter: NSDictionary) {
         self.showLoader()
         AddsHandler.makeAddFeature(parameter: Parameter, success: { (successResponse) in
             self.stopAnimating()
@@ -1144,7 +1144,7 @@ class AddDetailController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     //Make Add Favourite
-    func adForest_makeAddFavourite(param: NSDictionary) {
+    func makeAddFavourite(param: NSDictionary) {
         self.showLoader()
         AddsHandler.makeAddFavourite(parameter: param, success: { (successResponse) in
             self.stopAnimating()
@@ -1164,7 +1164,7 @@ class AddDetailController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     //Block user
-    func adForest_blockUser(param: NSDictionary) {
+    func blockUser(param: NSDictionary) {
         self.showLoader()
         UserHandler.blockUser(parameter: param, success: { (successResponse) in
             self.stopAnimating()
@@ -1186,7 +1186,7 @@ class AddDetailController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // Add Rating
-    func adForest_addRating(param: NSDictionary) {
+    func addRating(param: NSDictionary) {
         self.showLoader()
         AddsHandler.ratingToAdd(parameter: param, success: { (successResponse) in
             self.stopAnimating()

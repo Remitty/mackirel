@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cosmos
 import NVActivityIndicatorView
 
 class UserPublicProfile: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, NVActivityIndicatorViewable {
@@ -73,46 +72,7 @@ class UserPublicProfile: UIViewController, UICollectionViewDelegate, UICollectio
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adMob() {
-        if UserHandler.sharedInstance.objAdMob != nil {
-            let objData = UserHandler.sharedInstance.objAdMob
-            var isShowAd = false
-            if let adShow = objData?.show {
-                isShowAd = adShow
-            }
-            if isShowAd {
-                var isShowBanner = false
-                var isShowInterstital = false
-                if let banner = objData?.isShowBanner {
-                    isShowBanner = banner
-                }
-                if let intersitial = objData?.isShowInitial {
-                    isShowInterstital = intersitial
-                }
-                if isShowBanner {
-                    SwiftyAd.shared.setup(withBannerID: (objData?.bannerId)!, interstitialID: "", rewardedVideoID: "")
-
-                    if objData?.position == "top" {
-                        self.containerViewProfile.translatesAutoresizingMaskIntoConstraints = false
-                        self.containerViewProfile.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50).isActive = true
-                        SwiftyAd.shared.showBanner(from: self, at: .top)
-                    }
-                    else {
-                        self.collectionViewAds.translatesAutoresizingMaskIntoConstraints = false
-                        self.collectionViewAds.bottomAnchor.constraint(equalTo: self.containerView.bottomAnchor, constant: 50).isActive = true
-                        SwiftyAd.shared.showBanner(from: self, at: .bottom)
-                    }
-                }
-                if isShowInterstital {
-                    SwiftyAd.shared.setup(withBannerID: "", interstitialID: (objData?.interstitalId)!, rewardedVideoID: "")
-                    SwiftyAd.shared.showInterstitial(from: self)
-                }
-            }
-        }
-    }
-    
-    
-    func adForest_populateData() {
+    func populateData() {
         if UserHandler.sharedInstance.objPublicProfile != nil {
             let objData = UserHandler.sharedInstance.objPublicProfile
             
@@ -134,16 +94,7 @@ class UserPublicProfile: UIViewController, UICollectionViewDelegate, UICollectio
             if let loginTime = objData?.profileExtra.lastLogin {
                 self.lblLastLogin.text = loginTime
             }
-            if let ratingBar = objData?.profileExtra.rateBar.number {
-                self.ratingBar.settings.updateOnTouch = false
-                self.ratingBar.settings.fillMode = .precise
-                self.ratingBar.settings.filledColor = Constants.hexStringToUIColor(hex: Constants.AppColor.ratingColor)
-                self.ratingBar.rating = Double(ratingBar)!
-            }
             
-            if let ratingText = objData?.profileExtra.rateBar.text {
-                self.ratingBar.text = ratingText
-            }
             
             guard let introText = objData?.introduction.value else {return}
             
@@ -275,7 +226,7 @@ class UserPublicProfile: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     //MARK:- Api Calls
-    func adForest_publicProfileData(parameter: NSDictionary) {
+    func publicProfileData(parameter: NSDictionary) {
         self.showLoader()
         UserHandler.userPublicProfile(params: parameter, success: { (successResponse) in
             self.stopAnimating()
@@ -297,7 +248,7 @@ class UserPublicProfile: UIViewController, UICollectionViewDelegate, UICollectio
         }
     }
     
-    func adForest_loadMoreData(parameter: NSDictionary) {
+    func loadMoreData(parameter: NSDictionary) {
         self.showLoader()
         UserHandler.userPublicProfile(params: parameter, success: { (successResponse) in
             self.stopAnimating()

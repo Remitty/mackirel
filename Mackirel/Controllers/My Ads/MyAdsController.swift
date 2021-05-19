@@ -131,7 +131,7 @@ class MyAdsController: UIViewController, UICollectionViewDelegate, UICollectionV
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if AddsHandler.sharedInstance.objMyAds != nil {
         let objData = AddsHandler.sharedInstance.objMyAds
             
@@ -182,7 +182,7 @@ class MyAdsController: UIViewController, UICollectionViewDelegate, UICollectionV
         }
     }
     
-    func adForest_settingsData() {
+    func settingsData() {
         if let settingsInfo = defaults.object(forKey: "settings") {
             settingObject = NSKeyedUnarchiver.unarchiveObject(with: settingsInfo as! Data) as! [String : Any]
             let model = SettingsRoot(fromDictionary: settingObject)
@@ -420,7 +420,7 @@ class MyAdsController: UIViewController, UICollectionViewDelegate, UICollectionV
     
     //MARK:- API Calls
     //Ads Data
-    func adForest_getAddsData() {
+    func getAddsData() {
         self.showLoader()
         AddsHandler.myAds(success: { (successResponse) in
             self.stopAnimating()
@@ -445,7 +445,7 @@ class MyAdsController: UIViewController, UICollectionViewDelegate, UICollectionV
         }
     }
     
-    func adForest_loadMoreData(param: NSDictionary) {
+    func loadMoreData(param: NSDictionary) {
         self.showLoader()
         AddsHandler.moreMyAdsData(param: param, success: { (successResponse) in
             self.stopAnimating()
@@ -468,7 +468,7 @@ class MyAdsController: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     //delete add
-    func adForest_deleteAd(param: NSDictionary) {
+    func deleteAd(param: NSDictionary) {
         self.showLoader()
         AddsHandler.deleteAdd(param: param, success: { (successResponse) in
             self.stopAnimating()
@@ -490,7 +490,7 @@ class MyAdsController: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     //change add status
-    func adForest_changeAddStatus(param: NSDictionary) {
+    func changeAddStatus(param: NSDictionary) {
         self.showLoader()
         AddsHandler.changeAddStatus(parameter: param, success: { (successResponse) in
             self.stopAnimating()

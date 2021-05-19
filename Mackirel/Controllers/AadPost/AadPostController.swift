@@ -280,7 +280,7 @@ class AadPostController: UIViewController, NVActivityIndicatorViewable, UITableV
     }
     
     //MARK:- API Calls
-    func adForest_adPost(param: NSDictionary) {
+    func adPost(param: NSDictionary) {
         print(param)
         self.showLoader()
         AddsHandler.adPost(parameter: param, success: { (successResponse) in
@@ -333,7 +333,7 @@ class AadPostController: UIViewController, NVActivityIndicatorViewable, UITableV
     }
     
     // Dynamic Fields
-    func adForest_dynamicFields(param: NSDictionary) {
+    func dynamicFields(param: NSDictionary) {
        self.showLoader()
         AddsHandler.adPostDynamicFields(parameter: param, success: { (successResponse) in
             self.stopAnimating()

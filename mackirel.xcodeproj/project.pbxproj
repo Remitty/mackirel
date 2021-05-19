@@ -1081,9 +1081,9 @@
 		72EA1CAA775B88E107CA05A5 /* Pods-mackirel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mackirel.release.xcconfig"; path = "Pods/Target Support Files/Pods-mackirel/Pods-mackirel.release.xcconfig"; sourceTree = "<group>"; };
 		7E8E85BC500BB984CDCE7886 /* Pods-mackirel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mackirel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mackirel/Pods-mackirel.debug.xcconfig"; sourceTree = "<group>"; };
 		BC3B142E5A05FE3D3991353C /* Pods_mackirel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mackirel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3B7D360265412550011B00F /* mackirel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = mackirel.app; path = "/Users/brian/work/market/build/Debug-iphoneos/mackirel.app"; sourceTree = "<absolute>"; };
-		D3B7D361265412550011B00F /* mackirelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = mackirelTests.xctest; path = "/Users/brian/work/market/build/Debug-iphoneos/mackirelTests.xctest"; sourceTree = "<absolute>"; };
-		D3B7D362265412550011B00F /* mackirelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = mackirelUITests.xctest; path = "/Users/brian/work/market/build/Debug-iphoneos/mackirelUITests.xctest"; sourceTree = "<absolute>"; };
+		D3A0F5992654A58B00053693 /* mackirel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mackirel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3A0F59A2654A58B00053693 /* mackirelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mackirelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3A0F59B2654A58B00053693 /* mackirelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mackirelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B7D3692654129D0011B00F /* mackirel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = mackirel.entitlements; path = Mackirel/mackirel.entitlements; sourceTree = "<group>"; };
 		D3B7D36B265412F30011B00F /* AdForest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AdForest.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2229,6 +2229,9 @@
 				18BBFA852051098B0067662F /* Mackirel */,
 				0F8C772C85EC76F33C55B54F /* Pods */,
 				5DE79EEDB704060570E91B76 /* Frameworks */,
+				D3A0F5992654A58B00053693 /* mackirel.app */,
+				D3A0F59A2654A58B00053693 /* mackirelTests.xctest */,
+				D3A0F59B2654A58B00053693 /* mackirelUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2897,7 +2900,7 @@
 			);
 			name = mackirel;
 			productName = AdForest;
-			productReference = D3B7D360265412550011B00F /* mackirel.app */;
+			productReference = D3A0F5992654A58B00053693 /* mackirel.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18BBFA992051098C0067662F /* mackirelTests */ = {
@@ -2915,7 +2918,7 @@
 			);
 			name = mackirelTests;
 			productName = AdForestTests;
-			productReference = D3B7D361265412550011B00F /* mackirelTests.xctest */;
+			productReference = D3A0F59A2654A58B00053693 /* mackirelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		18BBFAA42051098C0067662F /* mackirelUITests */ = {
@@ -2933,7 +2936,7 @@
 			);
 			name = mackirelUITests;
 			productName = AdForestUITests;
-			productReference = D3B7D362265412550011B00F /* mackirelUITests.xctest */;
+			productReference = D3A0F59B2654A58B00053693 /* mackirelUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -3077,7 +3080,6 @@
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/OpalImagePicker/OpalImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -3111,7 +3113,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpalImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -3830,7 +3831,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = AdForest/AdForest.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Mackirel/mackirel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -3843,7 +3844,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6ba7ba8c-bf20-47cd-b2f1-137f2ade4e4a";
 				PROVISIONING_PROFILE_SPECIFIER = adForestDevNew;
-				SWIFT_OBJC_BRIDGING_HEADER = "AdForest/AdForest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mackirel/mackirel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3856,7 +3857,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = AdForest/AdForest.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Mackirel/mackirel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -3869,7 +3870,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6ba7ba8c-bf20-47cd-b2f1-137f2ade4e4a";
 				PROVISIONING_PROFILE_SPECIFIER = adForestDevNew;
-				SWIFT_OBJC_BRIDGING_HEADER = "AdForest/AdForest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mackirel/mackirel-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

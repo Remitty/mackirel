@@ -133,7 +133,7 @@ class LocationSearch: UIViewController , RangeSeekSliderDelegate, NVActivityIndi
         }
     }
 
-    func adForest_populateData() {
+    func populateData() {
         if let settingsInfo = defaults.object(forKey: "settings") {
             let  settingObject = NSKeyedUnarchiver.unarchiveObject(with: settingsInfo as! Data) as! [String : Any]
             let model = SettingsRoot(fromDictionary: settingObject)

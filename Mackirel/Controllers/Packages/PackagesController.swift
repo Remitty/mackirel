@@ -290,7 +290,7 @@ class PackagesController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     //MARK:- In App Method
-    func adForest_MoveToInAppPurchases() {
+    func MoveToInAppPurchases() {
         self.purchaseProduct(productID: self.inApp_id)
     }
     
@@ -388,7 +388,7 @@ class PackagesController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     //MARK:- API Call
-    func adForest_pakcagesData() {
+    func pakcagesData() {
         self.showLoader()
         UserHandler.packagesdata(success: { (successResponse) in
             self.stopAnimating()
@@ -418,7 +418,7 @@ class PackagesController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     // payment confirmation
-    func adForest_paymentConfirmation(parameter: NSDictionary) {
+    func paymentConfirmation(parameter: NSDictionary) {
         self.showLoader()
         UserHandler.paymentConfirmation(parameters: parameter, success: { (successResponse) in
             self.stopAnimating()

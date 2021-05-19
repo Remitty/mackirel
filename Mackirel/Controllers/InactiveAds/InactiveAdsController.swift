@@ -125,7 +125,7 @@ class InactiveAdsController: UIViewController, UIScrollViewDelegate, UICollectio
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if AddsHandler.sharedInstance.objInactiveAds != nil {
             let objData = AddsHandler.sharedInstance.objInactiveAds
             
@@ -328,7 +328,7 @@ class InactiveAdsController: UIViewController, UIScrollViewDelegate, UICollectio
     //MARK:- API Call
     
     //Inactive Ads Data
-    func adForest_inactiveAdsData() {
+    func inactiveAdsData() {
         self.showLoader()
         AddsHandler.inactiveAds(success: { (successResponse) in
             self.stopAnimating()
@@ -352,7 +352,7 @@ class InactiveAdsController: UIViewController, UIScrollViewDelegate, UICollectio
         }
     }
     
-    func adForest_loadMoreData(param: NSDictionary) {
+    func loadMoreData(param: NSDictionary) {
         self.showLoader()
         AddsHandler.moreInactiveAdsdata(param: param, success: { (successResponse) in
             self.stopAnimating()

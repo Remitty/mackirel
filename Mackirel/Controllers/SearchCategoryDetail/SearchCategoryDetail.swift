@@ -71,7 +71,7 @@ class SearchCategoryDetail: UIViewController, UITableViewDelegate, UITableViewDa
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if AddsHandler.sharedInstance.objSearchCategory != nil {
             let data = AddsHandler.sharedInstance.objSearchCategory
             if let title = data?.title {

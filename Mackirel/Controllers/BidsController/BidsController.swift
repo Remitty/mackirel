@@ -99,7 +99,7 @@ class BidsController: ButtonBarPagerTabStripViewController, NVActivityIndicatorV
     }
     
     //MARK:- API Call
-    func adForest_bidsData(param: NSDictionary) {
+    func bidsData(param: NSDictionary) {
         self.showLoader()
         AddsHandler.bidsData(param: param, success: { (successResponse) in
             self.stopAnimating()

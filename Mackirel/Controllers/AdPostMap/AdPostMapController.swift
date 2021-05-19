@@ -184,7 +184,7 @@ class AdPostMapController: UITableViewController, GMSAutocompleteViewControllerD
     }
     
     
-    func adForest_populateData() {
+    func populateData() {
         if AddsHandler.sharedInstance.objAdPost != nil {
             let objData = AddsHandler.sharedInstance.objAdPost
             
@@ -665,7 +665,7 @@ class AdPostMapController: UITableViewController, GMSAutocompleteViewControllerD
     
     //MARK:- API Call
     //Post Add
-    func adForest_postAd(param: NSDictionary) {
+    func postAd(param: NSDictionary) {
         self.showLoader()
         AddsHandler.adPostLive(parameter: param, success: { (successResponse) in
             self.stopAnimating()
@@ -688,7 +688,7 @@ class AdPostMapController: UITableViewController, GMSAutocompleteViewControllerD
     }
     
     // sub locations
-    func adForest_subLocations(param: NSDictionary) {
+    func subLocations(param: NSDictionary) {
         self.showLoader()
         AddsHandler.adPostSubLocations(param: param, success: { (successResponse) in
             self.stopAnimating()

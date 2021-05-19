@@ -95,7 +95,7 @@ class TermsConditionsController: UIViewController , UITableViewDelegate, UITable
     }
     
     //MARK:- API Call
-    func adForest_termsData(param: NSDictionary) {
+    func termsData(param: NSDictionary) {
         self.showLoader()
         UserHandler.termsConditions(parameter: param, success: { (successResponse) in
             self.stopAnimating()

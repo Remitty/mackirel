@@ -94,7 +94,7 @@ class ReportController: UIViewController , NVActivityIndicatorViewable {
         }
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if AddsHandler.sharedInstance.objReportPopUp != nil {
             let objData = AddsHandler.sharedInstance.objReportPopUp
             if let cancelButtonText = objData?.btnCancel {
@@ -158,7 +158,7 @@ class ReportController: UIViewController , NVActivityIndicatorViewable {
     }
     
     //MARK:- API Calls
-    func adForest_reportAdd(parameter: NSDictionary) {
+    func reportAdd(parameter: NSDictionary) {
         self.showLoader()
         AddsHandler.reportAdd(parameter: parameter, success: { (successResponse) in
             self.stopAnimating()

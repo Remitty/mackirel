@@ -273,7 +273,7 @@ class ChatController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.adForest_getChatData(parameter: parameter as NSDictionary)
     }
     
-    func adForest_populateData() {
+    func populateData() {
         if UserHandler.sharedInstance.objSentOfferChatData != nil {
             let objData = UserHandler.sharedInstance.objSentOfferChatData
             
@@ -442,7 +442,7 @@ class ChatController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK:- API Call
     
-    func adForest_getChatData(parameter: NSDictionary) {
+    func getChatData(parameter: NSDictionary) {
         UserHandler.getSentOfferMessages(parameter: parameter, success: { (successResponse) in
             self.stopAnimating()
             self.refreshControl.endRefreshing()
@@ -471,7 +471,7 @@ class ChatController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //Load More Chat
-    func adForest_loadMoreChat(parameter: NSDictionary) {
+    func loadMoreChat(parameter: NSDictionary) {
         UserHandler.getSentOfferMessages(parameter: parameter, success: { (successResponse) in
             self.stopAnimating()
             self.refreshControl.endRefreshing()
@@ -493,7 +493,7 @@ class ChatController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //send message
-    func adForest_sendMessage(param: NSDictionary) {
+    func sendMessage(param: NSDictionary) {
         UserHandler.sendMessage(parameter: param, success: { (successResponse) in
             self.stopAnimating()
             self.refreshControl.endRefreshing()

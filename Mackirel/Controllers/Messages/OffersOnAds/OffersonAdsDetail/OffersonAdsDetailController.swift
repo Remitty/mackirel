@@ -158,7 +158,7 @@ class OffersonAdsDetailController: UIViewController, UITableViewDelegate, UITabl
     }
     
     //MARK:- API Call
-    func adForest_getDetailsData(param: NSDictionary) {
+    func getDetailsData(param: NSDictionary) {
         UserHandler.getOfferAddDetail(param: param, success: { (successResponse) in
             self.stopAnimating()
             self.refreshControl.endRefreshing()
@@ -179,7 +179,7 @@ class OffersonAdsDetailController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func adForest_loadMoreData(param: NSDictionary) {
+    func loadMoreData(param: NSDictionary) {
         UserHandler.getOfferAddDetail(param: param, success: { (successResponse) in
             self.stopAnimating()
             self.refreshControl.endRefreshing()

@@ -175,7 +175,7 @@ class UserRatingController: UIViewController, UITableViewDelegate, UITableViewDa
 
     //MARK:- API Calls
     
-    func adForest_userRatingData() {
+    func userRatingData() {
         self.showLoader()
         UserHandler.userProfileRating(success: { (successResponse) in
             self.stopAnimating()

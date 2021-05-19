@@ -1030,7 +1030,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK:- API Call
     
     //get home data
-    func adForest_homeData() {
+    func homeData() {
          //self.navigationController?.isNavigationBarHidden = false
         AddsHandler.homeData(success: { (successResponse) in
             self.stopAnimating()
@@ -1185,7 +1185,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //MARK:- Send fcm token to server
-    func adForest_sendFCMToken() {
+    func sendFCMToken() {
         var fcmToken = ""
         if let token = defaults.value(forKey: "fcmToken") as? String {
             fcmToken = token
@@ -1205,7 +1205,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //MARK:- Near By Search
-    func adForest_nearBySearch(param: NSDictionary) {
+    func nearBySearch(param: NSDictionary) {
         self.showLoader()
         AddsHandler.nearbyAddsSearch(params: param, success: { (successResponse) in
             self.stopAnimating()
