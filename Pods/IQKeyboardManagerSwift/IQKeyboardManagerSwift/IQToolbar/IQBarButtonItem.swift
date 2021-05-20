@@ -70,8 +70,8 @@ open class IQBarButtonItem: UIBarButtonItem {
             var textAttributes = [NSAttributedString.Key: Any]()
             let foregroundColorKey = NSAttributedString.Key.foregroundColor
             #elseif swift(>=4)
-            var textAttributes = [NSAttributedStringKey: Any]()
-            let foregroundColorKey = NSAttributedStringKey.foregroundColor
+            var textAttributes = [NSAttributedString.Key: Any]()
+            let foregroundColorKey = NSAttributedString.Key.foregroundColor
             #else
             var textAttributes = [String: Any]()
             let foregroundColorKey = NSForegroundColorAttributeName
@@ -87,7 +87,7 @@ open class IQBarButtonItem: UIBarButtonItem {
                         #if swift(>=4.2)
                         textAttributes[key] = value
                         #else
-                        textAttributes[NSAttributedStringKey.init(key)] = value
+                        textAttributes[NSAttributedString.Key.init(key)] = value
                         #endif
                     }
                 }

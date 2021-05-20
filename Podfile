@@ -13,18 +13,17 @@ target 'mackirel' do
     #Google Login With Firebase
    
     pod 'Firebase/Auth'
-    pod 'Firebase/Core'
-    pod 'Firebase/Messaging'
+#    pod 'Firebase/Core'
     pod 'GoogleAnalytics'
     
     # IQKeyboardManager
     pod 'IQKeyboardManagerSwift'
     
     #Activity Indicator View
-    pod 'NVActivityIndicatorView'
+    pod 'NVActivityIndicatorView/Extended'
     
     #For Side Menu
-    pod 'SlideMenuControllerSwift'
+    pod 'SlideMenuControllerSwift', :git => 'https://github.com/AtomicSLLC/SlideMenuControllerSwift.git', :branch => 'swift5'
     
     #Network
     pod 'Alamofire'
@@ -85,9 +84,9 @@ target 'mackirel' do
     # pod 'TCPickerView'
     
     #Message Kit
-    # pod 'MessageKit'
-    # pod 'MessageInputBar'
-    #pod 'JSQMessagesViewController', '7.3.3'
+#     pod 'MessageKit'
+#     pod 'MessageInputBar'
+#     pod 'JSQMessagesViewController', '7.3.3'
     
     pod 'SwiftCheckboxDialog'
     pod 'JGProgressHUD'

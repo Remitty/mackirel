@@ -73,7 +73,7 @@ open class FullScreenSlideshowViewController: UIViewController {
 
         // close button configuration
         closeButton.setImage(UIImage(named: "ic_cross_white", in: .module, compatibleWith: nil), for: UIControlState())
-        closeButton.addTarget(self, action: #selector(FullScreenSlideshowViewController.close), for: UIControlEvents.touchUpInside)
+        closeButton.addTarget(self, action: #selector(FullScreenSlideshowViewController.close), for: UIControl.Event.touchUpInside)
         view.addSubview(closeButton)
     }
 
