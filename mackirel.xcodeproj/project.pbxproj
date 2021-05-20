@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32218C16D4A72A493EE0A526 /* Pods_Mackirel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5D60DD7AA87C8E551E851D /* Pods_Mackirel.framework */; };
+		BF5CD272537F3EA3BFCE70F5 /* Pods_Mackirel_MackirelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077A6DCA302094582E565414 /* Pods_Mackirel_MackirelUITests.framework */; };
 		D3084DE12655E7C500CDB793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3084DE02655E7C500CDB793 /* AppDelegate.swift */; };
 		D3084DE32655E7C500CDB793 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3084DE22655E7C500CDB793 /* SceneDelegate.swift */; };
 		D3084DE52655E7C500CDB793 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3084DE42655E7C500CDB793 /* ViewController.swift */; };
@@ -15,6 +17,30 @@
 		D3084DED2655E7CC00CDB793 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3084DEB2655E7CC00CDB793 /* LaunchScreen.storyboard */; };
 		D3084DF82655E7CD00CDB793 /* MackirelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3084DF72655E7CD00CDB793 /* MackirelTests.swift */; };
 		D3084E032655E7CD00CDB793 /* MackirelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3084E022655E7CD00CDB793 /* MackirelUITests.swift */; };
+		D3FDBE922655EEA500923BA9 /* UserAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBE912655EEA500923BA9 /* UserAuthModel.swift */; };
+		D3FDBE972655EEFC00923BA9 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBE962655EEFC00923BA9 /* SplashVC.swift */; };
+		D3FDBE9C2655EF9A00923BA9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBE9B2655EF9A00923BA9 /* HomeVC.swift */; };
+		D3FDBEA12655EFE700923BA9 /* LeftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBEA02655EFE700923BA9 /* LeftVC.swift */; };
+		D3FDBEA72655F0B700923BA9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBEA62655F0B700923BA9 /* Alert.swift */; };
+		D3FDBEAC2655F2D600923BA9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBEAB2655F2D600923BA9 /* LoginVC.swift */; };
+		D3FDBEDD2655F5B200923BA9 /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBEDC2655F5B200923BA9 /* LeftMenuCell.swift */; };
+		D3FDBEE22656069500923BA9 /* StringValidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBEE12656069500923BA9 /* StringValidate.swift */; };
+		D3FDBEE72656076400923BA9 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBEE62656076400923BA9 /* URLImage.swift */; };
+		D3FDBEEC2656079500923BA9 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBEEB2656079500923BA9 /* NumberFormatter.swift */; };
+		D3FDBEF2265607F300923BA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBEF1265607F300923BA9 /* Constants.swift */; };
+		D3FDBEF72656092900923BA9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBEF62656092900923BA9 /* Network.swift */; };
+		D3FDBEFC265609AD00923BA9 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBEFB265609AD00923BA9 /* NetworkHandler.swift */; };
+		D3FDBF0126560A0200923BA9 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBF0026560A0200923BA9 /* RequestHandler.swift */; };
+		D3FDBF072656923C00923BA9 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBF062656923B00923BA9 /* RegisterVC.swift */; };
+		D3FDBF0C2656933B00923BA9 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBF0B2656933B00923BA9 /* Button.swift */; };
+		D3FDBF112656939000923BA9 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBF102656939000923BA9 /* ChangePasswordVC.swift */; };
+		D3FDBF16265694DE00923BA9 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBF15265694DE00923BA9 /* ForgotPasswordVC.swift */; };
+		D3FDBF1B265695DE00923BA9 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBF1A265695DE00923BA9 /* ResetPasswordVC.swift */; };
+		D3FDBF20265696D900923BA9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBF1F265696D900923BA9 /* ProfileVC.swift */; };
+		D3FDBF252656971E00923BA9 /* ProfileEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBF242656971E00923BA9 /* ProfileEditVC.swift */; };
+		D3FDBF2A265697F500923BA9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBF29265697F500923BA9 /* UserModel.swift */; };
+		D3FDBF2F2656984E00923BA9 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDBF2E2656984E00923BA9 /* UserProfileModel.swift */; };
+		D9A379406B1FFEFC15DD3140 /* Pods_MackirelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56502DE7ABFD09F3D1E4F44F /* Pods_MackirelTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +61,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		077A6DCA302094582E565414 /* Pods_Mackirel_MackirelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mackirel_MackirelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CAFF725BE252039BC539DA0 /* Pods-Mackirel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mackirel.debug.xcconfig"; path = "Target Support Files/Pods-Mackirel/Pods-Mackirel.debug.xcconfig"; sourceTree = "<group>"; };
+		21469B10296E1E51AD2284F9 /* Pods-MackirelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackirelTests.release.xcconfig"; path = "Target Support Files/Pods-MackirelTests/Pods-MackirelTests.release.xcconfig"; sourceTree = "<group>"; };
+		56502DE7ABFD09F3D1E4F44F /* Pods_MackirelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MackirelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DF75B1A03B385630A847A74 /* Pods-Mackirel-MackirelUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mackirel-MackirelUITests.release.xcconfig"; path = "Target Support Files/Pods-Mackirel-MackirelUITests/Pods-Mackirel-MackirelUITests.release.xcconfig"; sourceTree = "<group>"; };
+		911A197370C22D3BE83FD6AE /* Pods-MackirelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackirelTests.debug.xcconfig"; path = "Target Support Files/Pods-MackirelTests/Pods-MackirelTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9C5D60DD7AA87C8E551E851D /* Pods_Mackirel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mackirel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C65B361B4D758CF5FE7BEC1 /* Pods-Mackirel-MackirelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mackirel-MackirelUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mackirel-MackirelUITests/Pods-Mackirel-MackirelUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3084DDD2655E7C500CDB793 /* Mackirel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mackirel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3084DE02655E7C500CDB793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3084DE22655E7C500CDB793 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +83,30 @@
 		D3084DFE2655E7CD00CDB793 /* MackirelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MackirelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3084E022655E7CD00CDB793 /* MackirelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MackirelUITests.swift; sourceTree = "<group>"; };
 		D3084E042655E7CD00CDB793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3FDBE912655EEA500923BA9 /* UserAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthModel.swift; sourceTree = "<group>"; };
+		D3FDBE962655EEFC00923BA9 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		D3FDBE9B2655EF9A00923BA9 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		D3FDBEA02655EFE700923BA9 /* LeftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftVC.swift; sourceTree = "<group>"; };
+		D3FDBEA62655F0B700923BA9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		D3FDBEAB2655F2D600923BA9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D3FDBEDC2655F5B200923BA9 /* LeftMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
+		D3FDBEE12656069500923BA9 /* StringValidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidate.swift; sourceTree = "<group>"; };
+		D3FDBEE62656076400923BA9 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		D3FDBEEB2656079500923BA9 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
+		D3FDBEF1265607F300923BA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D3FDBEF62656092900923BA9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D3FDBEFB265609AD00923BA9 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		D3FDBF0026560A0200923BA9 /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		D3FDBF062656923B00923BA9 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		D3FDBF0B2656933B00923BA9 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		D3FDBF102656939000923BA9 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		D3FDBF15265694DE00923BA9 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		D3FDBF1A265695DE00923BA9 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		D3FDBF1F265696D900923BA9 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		D3FDBF242656971E00923BA9 /* ProfileEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditVC.swift; sourceTree = "<group>"; };
+		D3FDBF29265697F500923BA9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D3FDBF2E2656984E00923BA9 /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
+		FFD056C4449B247EC32FBDF2 /* Pods-Mackirel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mackirel.release.xcconfig"; path = "Target Support Files/Pods-Mackirel/Pods-Mackirel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32218C16D4A72A493EE0A526 /* Pods_Mackirel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A379406B1FFEFC15DD3140 /* Pods_MackirelTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +130,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5CD272537F3EA3BFCE70F5 /* Pods_Mackirel_MackirelUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		283CEA983DA5D0650C145F72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CAFF725BE252039BC539DA0 /* Pods-Mackirel.debug.xcconfig */,
+				FFD056C4449B247EC32FBDF2 /* Pods-Mackirel.release.xcconfig */,
+				9C65B361B4D758CF5FE7BEC1 /* Pods-Mackirel-MackirelUITests.debug.xcconfig */,
+				6DF75B1A03B385630A847A74 /* Pods-Mackirel-MackirelUITests.release.xcconfig */,
+				911A197370C22D3BE83FD6AE /* Pods-MackirelTests.debug.xcconfig */,
+				21469B10296E1E51AD2284F9 /* Pods-MackirelTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C711DD1A3651798B90BDEC65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C5D60DD7AA87C8E551E851D /* Pods_Mackirel.framework */,
+				077A6DCA302094582E565414 /* Pods_Mackirel_MackirelUITests.framework */,
+				56502DE7ABFD09F3D1E4F44F /* Pods_MackirelTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D3084DD42655E7C500CDB793 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +167,8 @@
 				D3084DF62655E7CD00CDB793 /* MackirelTests */,
 				D3084E012655E7CD00CDB793 /* MackirelUITests */,
 				D3084DDE2655E7C500CDB793 /* Products */,
+				283CEA983DA5D0650C145F72 /* Pods */,
+				C711DD1A3651798B90BDEC65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +185,12 @@
 		D3084DDF2655E7C500CDB793 /* Mackirel */ = {
 			isa = PBXGroup;
 			children = (
+				D3FDBEF0265607D300923BA9 /* Constants */,
+				D3FDBEA52655F0A600923BA9 /* Helper */,
+				D3FDBE902655EE5500923BA9 /* Components */,
+				D3FDBE8F2655EE2F00923BA9 /* Network */,
+				D3FDBE8E2655EE1D00923BA9 /* Models */,
+				D3FDBE8D2655EDFC00923BA9 /* Controllers */,
 				D3084DE02655E7C500CDB793 /* AppDelegate.swift */,
 				D3084DE22655E7C500CDB793 /* SceneDelegate.swift */,
 				D3084DE42655E7C500CDB793 /* ViewController.swift */,
@@ -128,6 +220,87 @@
 			path = MackirelUITests;
 			sourceTree = "<group>";
 		};
+		D3FDBE8D2655EDFC00923BA9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDBF05265691FB00923BA9 /* Auth */,
+				D3FDBE962655EEFC00923BA9 /* SplashVC.swift */,
+				D3FDBE9B2655EF9A00923BA9 /* HomeVC.swift */,
+				D3FDBEA02655EFE700923BA9 /* LeftVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D3FDBE8E2655EE1D00923BA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDBE912655EEA500923BA9 /* UserAuthModel.swift */,
+				D3FDBF29265697F500923BA9 /* UserModel.swift */,
+				D3FDBF2E2656984E00923BA9 /* UserProfileModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D3FDBE8F2655EE2F00923BA9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDBEF62656092900923BA9 /* Network.swift */,
+				D3FDBEFB265609AD00923BA9 /* NetworkHandler.swift */,
+				D3FDBF0026560A0200923BA9 /* RequestHandler.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D3FDBE902655EE5500923BA9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDBEDB2655F58900923BA9 /* LeftMenuCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D3FDBEA52655F0A600923BA9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDBEA62655F0B700923BA9 /* Alert.swift */,
+				D3FDBEE12656069500923BA9 /* StringValidate.swift */,
+				D3FDBEE62656076400923BA9 /* URLImage.swift */,
+				D3FDBEEB2656079500923BA9 /* NumberFormatter.swift */,
+				D3FDBF0B2656933B00923BA9 /* Button.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		D3FDBEDB2655F58900923BA9 /* LeftMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDBEDC2655F5B200923BA9 /* LeftMenuCell.swift */,
+			);
+			path = LeftMenuCell;
+			sourceTree = "<group>";
+		};
+		D3FDBEF0265607D300923BA9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDBEF1265607F300923BA9 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		D3FDBF05265691FB00923BA9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDBEAB2655F2D600923BA9 /* LoginVC.swift */,
+				D3FDBF062656923B00923BA9 /* RegisterVC.swift */,
+				D3FDBF102656939000923BA9 /* ChangePasswordVC.swift */,
+				D3FDBF15265694DE00923BA9 /* ForgotPasswordVC.swift */,
+				D3FDBF1A265695DE00923BA9 /* ResetPasswordVC.swift */,
+				D3FDBF1F265696D900923BA9 /* ProfileVC.swift */,
+				D3FDBF242656971E00923BA9 /* ProfileEditVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +308,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3084E072655E7CD00CDB793 /* Build configuration list for PBXNativeTarget "Mackirel" */;
 			buildPhases = (
+				92E9762D20F451DDBF71F007 /* [CP] Check Pods Manifest.lock */,
 				D3084DD92655E7C500CDB793 /* Sources */,
 				D3084DDA2655E7C500CDB793 /* Frameworks */,
 				D3084DDB2655E7C500CDB793 /* Resources */,
+				90B7ED827BAA7B6ECA02D9CF /* [CP] Embed Pods Frameworks */,
+				0A6A15182C7E85185381286A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +328,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3084E0A2655E7CD00CDB793 /* Build configuration list for PBXNativeTarget "MackirelTests" */;
 			buildPhases = (
+				4520313738BA2DCAFB47ABF6 /* [CP] Check Pods Manifest.lock */,
 				D3084DEF2655E7CD00CDB793 /* Sources */,
 				D3084DF02655E7CD00CDB793 /* Frameworks */,
 				D3084DF12655E7CD00CDB793 /* Resources */,
@@ -170,9 +347,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3084E0D2655E7CD00CDB793 /* Build configuration list for PBXNativeTarget "MackirelUITests" */;
 			buildPhases = (
+				64806444EA03867A5620F68B /* [CP] Check Pods Manifest.lock */,
 				D3084DFA2655E7CD00CDB793 /* Sources */,
 				D3084DFB2655E7CD00CDB793 /* Frameworks */,
 				D3084DFC2655E7CD00CDB793 /* Resources */,
+				F99CE56F87B55001CA5F5A51 /* [CP] Embed Pods Frameworks */,
+				D9DF633AB94CE6A9172B10B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,14 +433,174 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A6A15182C7E85185381286A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mackirel/Pods-Mackirel-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mackirel/Pods-Mackirel-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mackirel/Pods-Mackirel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4520313738BA2DCAFB47ABF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MackirelTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64806444EA03867A5620F68B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mackirel-MackirelUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90B7ED827BAA7B6ECA02D9CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mackirel/Pods-Mackirel-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mackirel/Pods-Mackirel-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mackirel/Pods-Mackirel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92E9762D20F451DDBF71F007 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mackirel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9DF633AB94CE6A9172B10B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mackirel-MackirelUITests/Pods-Mackirel-MackirelUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mackirel-MackirelUITests/Pods-Mackirel-MackirelUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mackirel-MackirelUITests/Pods-Mackirel-MackirelUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F99CE56F87B55001CA5F5A51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mackirel-MackirelUITests/Pods-Mackirel-MackirelUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mackirel-MackirelUITests/Pods-Mackirel-MackirelUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mackirel-MackirelUITests/Pods-Mackirel-MackirelUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3084DD92655E7C500CDB793 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3FDBE922655EEA500923BA9 /* UserAuthModel.swift in Sources */,
+				D3FDBF20265696D900923BA9 /* ProfileVC.swift in Sources */,
+				D3FDBE972655EEFC00923BA9 /* SplashVC.swift in Sources */,
+				D3FDBEA12655EFE700923BA9 /* LeftVC.swift in Sources */,
 				D3084DE52655E7C500CDB793 /* ViewController.swift in Sources */,
+				D3FDBE9C2655EF9A00923BA9 /* HomeVC.swift in Sources */,
+				D3FDBF2F2656984E00923BA9 /* UserProfileModel.swift in Sources */,
+				D3FDBF0C2656933B00923BA9 /* Button.swift in Sources */,
+				D3FDBEF72656092900923BA9 /* Network.swift in Sources */,
+				D3FDBF2A265697F500923BA9 /* UserModel.swift in Sources */,
+				D3FDBF112656939000923BA9 /* ChangePasswordVC.swift in Sources */,
+				D3FDBF16265694DE00923BA9 /* ForgotPasswordVC.swift in Sources */,
+				D3FDBEAC2655F2D600923BA9 /* LoginVC.swift in Sources */,
+				D3FDBEFC265609AD00923BA9 /* NetworkHandler.swift in Sources */,
 				D3084DE12655E7C500CDB793 /* AppDelegate.swift in Sources */,
+				D3FDBEE72656076400923BA9 /* URLImage.swift in Sources */,
+				D3FDBF252656971E00923BA9 /* ProfileEditVC.swift in Sources */,
+				D3FDBEDD2655F5B200923BA9 /* LeftMenuCell.swift in Sources */,
+				D3FDBEA72655F0B700923BA9 /* Alert.swift in Sources */,
+				D3FDBF1B265695DE00923BA9 /* ResetPasswordVC.swift in Sources */,
+				D3FDBEEC2656079500923BA9 /* NumberFormatter.swift in Sources */,
+				D3FDBEF2265607F300923BA9 /* Constants.swift in Sources */,
 				D3084DE32655E7C500CDB793 /* SceneDelegate.swift in Sources */,
+				D3FDBF072656923C00923BA9 /* RegisterVC.swift in Sources */,
+				D3FDBEE22656069500923BA9 /* StringValidate.swift in Sources */,
+				D3FDBF0126560A0200923BA9 /* RequestHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +773,7 @@
 		};
 		D3084E082655E7CD00CDB793 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CAFF725BE252039BC539DA0 /* Pods-Mackirel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +793,7 @@
 		};
 		D3084E092655E7CD00CDB793 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFD056C4449B247EC32FBDF2 /* Pods-Mackirel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +813,7 @@
 		};
 		D3084E0B2655E7CD00CDB793 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 911A197370C22D3BE83FD6AE /* Pods-MackirelTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +836,7 @@
 		};
 		D3084E0C2655E7CD00CDB793 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21469B10296E1E51AD2284F9 /* Pods-MackirelTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +859,7 @@
 		};
 		D3084E0E2655E7CD00CDB793 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C65B361B4D758CF5FE7BEC1 /* Pods-Mackirel-MackirelUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +880,7 @@
 		};
 		D3084E0F2655E7CD00CDB793 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DF75B1A03B385630A847A74 /* Pods-Mackirel-MackirelUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

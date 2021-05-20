@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    static let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        FirebaseApp.configure()
         return true
     }
 
@@ -34,3 +40,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    func moveToMain() {
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        let leftVC = storyboard.instantiateViewController(withIdentifier: "LeftVC") as! LeftVC
+        let navi : UINavigationController = UINavigationController(rootViewController: mainVC)
+        let slideMenuController = SlideMenuController(mainViewController: navi, leftMenuViewController: leftVC)
+        self.window?.rootViewController = slideMenuController
+        self.window?.makeKeyAndVisible()
+    }
+    
+    func moveToLogin() {
+        print("HERE")
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        let nav: UINavigationController = UINavigationController(rootViewController: loginVC)
+        self.window?.rootViewController = nav
+        self.window?.makeKeyAndVisible()
+    }
+}

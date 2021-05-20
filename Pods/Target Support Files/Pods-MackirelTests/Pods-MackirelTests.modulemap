@@ -1,0 +1,6 @@
+framework module Pods_MackirelTests {
+  umbrella header "Pods-MackirelTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
