@@ -63,7 +63,7 @@ class SplashVC: UIViewController, NVActivityIndicatorViewable {
     
     func moveToMain() {
         self.stopAnimating()
-        let mainVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        let mainVC = storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
          let leftVC = storyboard?.instantiateViewController(withIdentifier: "LeftVC") as! LeftVC
 //         let navi : UINavigationController = UINavigationController(rootViewController: mainVC)
          let slideMenuController = SlideMenuController(mainViewController: mainVC, leftMenuViewController: leftVC)

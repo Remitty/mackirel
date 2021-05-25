@@ -111,12 +111,14 @@ class RegisterVC: UIViewController, UITextFieldDelegate, NVActivityIndicatorView
             var user : UserAuthModel!
             if success {
                 
-                    self.defaults.set(true, forKey: "isLogin")
-                    self.defaults.synchronize()
+//                    self.defaults.set(true, forKey: "isLogin")
+//                    self.defaults.synchronize()
 //                    self.moveToCompleteProfile()
                 
-                let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
-                self.navigationController?.pushViewController(mainVC, animated: true)
+//                let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
+//                self.navigationController?.pushViewController(mainVC, animated: true)
+                self.showToast(message: "Registerd successfully.")
+                self.navigationController?.popViewController(animated: true)
                 
             }
             else {

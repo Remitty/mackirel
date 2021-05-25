@@ -14,6 +14,7 @@ class Constants {
         
          static  let base = "https://www.joiintapp.com/";
          static  let api_url = "https://joiintapp.com/api/user";
+        static  let resource_url = "https://www.joiintapp.com/storage/";
 
          static  let REDIRECT_URL = base + "api/user/market/";
 
@@ -21,16 +22,52 @@ class Constants {
          static  let register = REDIRECT_URL + "signup";
 
          static  let CHECK_MAIL_ALREADY_REGISTERED = api_url+"verify";
-         static  let RESET_PASSWORD = REDIRECT_URL + "reset/password";
-         static  let CHANGE_PASSWORD = REDIRECT_URL + "change/password";
-         static  let FORGOT_PASSWORD = REDIRECT_URL + "forgot/password";
+         static  let RESET_PASSWORD = REDIRECT_URL + "reset";
+         static  let CHANGE_PASSWORD = REDIRECT_URL + "profile/reset_pass";
+         static  let FORGOT_PASSWORD = REDIRECT_URL + "forgot";
          static  let LOGOUT = api_url + "logout";
          static  let HELP = REDIRECT_URL + "help";
 
-         static  let UserProfile = REDIRECT_URL+"profile";
-         static  let UseProfileUpdate = REDIRECT_URL+"profile/update";
-         static  let GET_USER_BALANCES = REDIRECT_URL + "balances";
-
+         static  let UserProfile = REDIRECT_URL+"profile"
+        
+        static let GET_HOME_DATA = REDIRECT_URL + "home"
+        static let GET_MORE_PRODUCTS = REDIRECT_URL + "home"
+         
+        static let GET_PAYMENT = REDIRECT_URL + "payment"
+        
+        static let POST_NEW_PRODUCT = REDIRECT_URL + "post_ad"
+        static let POST_NEW_PRODCT_IMAGE = REDIRECT_URL + "post_ad/image"
+        static let DELETE_PRODUCT_IMAGE = REDIRECT_URL + "post_ad/image/delete"
+        static let GET_PRODUCT_DETAIL = REDIRECT_URL + "product/detail"
+        static let DELETE_PRODUCT = REDIRECT_URL + "product/delete"
+        static let UPDATE_PRODUCT = REDIRECT_URL + "ad/update"
+        
+        static let CREATE_ORDER = REDIRECT_URL + "order"
+        static let ORDER_INVOCE = REDIRECT_URL + "order/invoice"
+        static let ORDER_LIST = REDIRECT_URL + "order/list"
+        static let CONFIRM_ORDER = REDIRECT_URL + "order/confirm"
+        static let CANCEL_ORDER = REDIRECT_URL + "order/cancel"
+        static let GET_SHIPPING_ADDRESS = REDIRECT_URL + "shipping_address"
+        static let GET_WINNER_SHIPPING_ADDRESS = REDIRECT_URL + "winner_shipping_address"
+        
+        static let SELLER_PRODUCT_LIST = REDIRECT_URL + "seller/product/list"
+        static let SELLER_BALANCE = REDIRECT_URL + "seller/balance"
+        static let REQUEST_CASHOUT = REDIRECT_URL + "cashout"
+        static let CASHOUT_HISTORY = REDIRECT_URL + "cashout/history"
+        
+        static let REQUEST_MESSAGE_CHAT = REDIRECT_URL + "message/chat/request"
+        static let MESSAGE_CHAT = REDIRECT_URL + "message/chat"
+        static let CLOSE_MESSAGE_CHAT = REDIRECT_URL + "message/chat/clost"
+        static let CHAT_LIST = REDIRECT_URL + "chat/list"
+        static let DELETE_CHAT = REDIRECT_URL + "chat/list/delete"
+        
+        static let MY_AUCTION_LIST = REDIRECT_URL + "myauction/list"
+        static let BET_AUCTION = REDIRECT_URL + "auction/bet"
+        static let CREATE_AUCTION = REDIRECT_URL + "auction"
+        static let CANCEL_AUCTION = REDIRECT_URL + "auction/cancel"
+        static let CONFIRM_AUCTION = REDIRECT_URL + "auction/confirm"
+        static let AUCTION_LIST = REDIRECT_URL + "auction/list"
+        static let GET_AUCTION_DETAIL = REDIRECT_URL + "auction"
              
     }
     

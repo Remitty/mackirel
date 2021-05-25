@@ -11,15 +11,14 @@ import NVActivityIndicatorView
 
 enum MainMenu: Int {
     
-    case stakecoin = 0
-    case TradeToken
-    case linkwallet
-    case mtnservice
-    case prediction
-    case cryptowithdraw
-    case stockhistory
-    case depositactivities
-    case stocknews
+    case auction = 0
+    case payment
+    case withdraw
+    case cryptos
+    case myorders
+    case mylists
+    case myauctions
+    case message
     case support
     case logout
 }
@@ -63,21 +62,21 @@ class LeftVC: UIViewController, UITableViewDelegate, UITableViewDataSource, chan
     //MARK:- Properties
     
     var defaults = UserDefaults.standard
-    var mainMenus = ["Stake Coin", "Trade Cryptos", "Link Wallet", "MTN Service", "Prediction", "Crypto Withdraw", "Stock History", "Deposit Activities", "Stock News", "Support", "Logout"]
-    var mainMenuImages = [#imageLiteral(resourceName: "xmt"),#imageLiteral(resourceName: "nav_trade"), #imageLiteral(resourceName: "nav_trading"),#imageLiteral(resourceName: "nav_smartphone"), #imageLiteral(resourceName: "nav_analysis"),#imageLiteral(resourceName: "nav_bitcoin"), #imageLiteral(resourceName: "nav_chart"),#imageLiteral(resourceName: "nav_credit"), #imageLiteral(resourceName: "nav_news"), #imageLiteral(resourceName: "nav_support"),#imageLiteral(resourceName: "nav_logout")]
+    var mainMenus = ["Shop auction sales", "Payment", "Withdraw", "Deposit cryptos", "My orders", "My lists", "My auctions", "Message", "Support", "Logout"]
+    var mainMenuImages = [#imageLiteral(resourceName: "eye"), #imageLiteral(resourceName: "seller"),#imageLiteral(resourceName: "packages"), #imageLiteral(resourceName: "star"),#imageLiteral(resourceName: "shopping"), #imageLiteral(resourceName: "myads"),#imageLiteral(resourceName: "seller"), #imageLiteral(resourceName: "comments"), #imageLiteral(resourceName: "speaker"),#imageLiteral(resourceName: "logout")]
     var otherMenus = ["Support", "Logout"]
-    var othersArrayImages = [#imageLiteral(resourceName: "nav_support"),#imageLiteral(resourceName: "nav_logout")]
+    var othersArrayImages = [#imageLiteral(resourceName: "speaker"),#imageLiteral(resourceName: "logout")]
     
     var viewHome: UITabBarController!
-    var viewStakeCoin: UIViewController!
-    var viewTradeToken: UIViewController!
-    var viewLinkWallet: UIViewController!
-    var viewMtnService: UIViewController!
-    var viewPrediction: UIViewController!
-    var viewCryptoWithdraw: UIViewController!
-    var viewStockHistory: UIViewController!
-    var viewDepositActivities: UIViewController!
-    var viewStockNews: UIViewController!
+    var viewShop: UIViewController!
+    var viewAuction: UIViewController!
+    var viewPayment: UIViewController!
+    var viewWithdraw: UIViewController!
+    var viewDepositCryptos: UIViewController!
+    var viewMyOrders: UIViewController!
+    var viewMyLists: UIViewController!
+    var viewMyAcutions: UIViewController!
+    var viewMessage: UIViewController!
     
     
     //Other Menues
@@ -107,8 +106,8 @@ class LeftVC: UIViewController, UITableViewDelegate, UITableViewDataSource, chan
     }
     
     fileprivate func initializeViews() {
-//        let mainView = storyboard?.instantiateViewController(withIdentifier: "MainController") as! MainController
-//        self.viewHome = mainView //UINavigationController(rootViewController: stakecoinView)
+        let mainView = storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+        self.viewHome = mainView
         
     }
 
@@ -122,36 +121,24 @@ class LeftVC: UIViewController, UITableViewDelegate, UITableViewDataSource, chan
         switch other {
 //        case .home:
 //            self.slideMenuController()?.changeMainViewController(self.viewHome, close: true)
-        case .stakecoin:
-            self.navigationController?.pushViewController(viewStakeCoin, animated: true)
-//            self.slideMenuController()?.changeMainViewController(self.viewStakeCoin, close: true)
-        case .TradeToken:
-            self.navigationController?.pushViewController(viewTradeToken, animated: true)
-//            self.slideMenuController()?.changeMainViewController(self.viewTradeToken, close: true)
-        case .linkwallet:
-            self.navigationController?.pushViewController(viewLinkWallet, animated: true)
-//            self.slideMenuController()?.changeMainViewController(self.viewLinkWallet, close: true)
-        case .mtnservice:
-            self.navigationController?.pushViewController(viewMtnService, animated: true)
-//            self.slideMenuController()?.changeMainViewController(self.viewMtnService, close: true)
-        case .prediction:
-            self.navigationController?.pushViewController(viewPrediction, animated: true)
-//            self.slideMenuController()?.changeMainViewController(self.viewPrediction, close: true)
-        case .cryptowithdraw:
-            self.navigationController?.pushViewController(viewCryptoWithdraw, animated: true)
-//            self.slideMenuController()?.changeMainViewController(self.viewCryptoWithdraw, close: true)
-        case .stockhistory:
-            self.navigationController?.pushViewController(viewStockHistory, animated: true)
-//            self.slideMenuController()?.changeMainViewController(self.viewStockHistory, close: true)
-        case .depositactivities:
-            self.navigationController?.pushViewController(viewDepositActivities, animated: true)
-//            self.slideMenuController()?.changeMainViewController(self.viewDepositActivities, close: true)
-        case .stocknews:
-            self.navigationController?.pushViewController(viewStockNews, animated: true)
-//            self.slideMenuController()?.changeMainViewController(self.viewStockNews, close: true)
+        case .auction:
+            self.navigationController?.pushViewController(viewAuction, animated: true)
+        case .payment:
+            self.navigationController?.pushViewController(viewPayment, animated: true)
+        case .withdraw:
+            self.navigationController?.pushViewController(viewWithdraw, animated: true)
+        case .cryptos:
+            self.navigationController?.pushViewController(viewDepositCryptos, animated: true)
+        case .myorders:
+            self.navigationController?.pushViewController(viewMyOrders, animated: true)
+        case .mylists:
+            self.navigationController?.pushViewController(viewMyLists, animated: true)
+        case .myauctions:
+            self.navigationController?.pushViewController(viewMyAcutions, animated: true)
+        case .message:
+            self.navigationController?.pushViewController(viewMessage, animated: true)
         case .support :
             self.navigationController?.pushViewController(viewSupport, animated: true)
-//            self.slideMenuController()?.changeMainViewController(self.viewSupport, close: true)
         case .logout :
             let alert = Alert.showConfirmAlert(message: "Are you sure you want to logout?", handler: { (_) in self.logoutUser()})
             self.presentVC(alert)
@@ -178,7 +165,7 @@ class LeftVC: UIViewController, UITableViewDelegate, UITableViewDataSource, chan
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 11
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -207,8 +194,6 @@ class LeftVC: UIViewController, UITableViewDelegate, UITableViewDataSource, chan
         let menu = MainMenu(rawValue: indexPath.row)!
         self.changeMenu(menu)
         
-//        let obj = self.mainMenus[indexPath.row]
-//        self.changeViewController(controllerName: obj)
 
     }
 }
