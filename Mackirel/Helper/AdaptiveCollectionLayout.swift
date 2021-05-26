@@ -70,7 +70,7 @@ class AdaptiveCollectionLayout: UICollectionViewLayout {
 
             let descriptionHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
             
-            let height = AdaptiveCollectionConfig.cellPadding  + descriptionHeight
+            let height = descriptionHeight
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
             let insetFrame = frame.insetBy(
                 dx: AdaptiveCollectionConfig.cellPadding,

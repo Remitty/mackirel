@@ -31,7 +31,7 @@ class Constants {
          static  let UserProfile = REDIRECT_URL+"profile"
         
         static let GET_HOME_DATA = REDIRECT_URL + "home"
-        static let GET_MORE_PRODUCTS = REDIRECT_URL + "home"
+        static let GET_MORE_PRODUCTS = REDIRECT_URL + "home/more"
          
         static let GET_PAYMENT = REDIRECT_URL + "payment"
         

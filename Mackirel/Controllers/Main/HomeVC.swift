@@ -436,39 +436,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
                     self.presentVC(alert)
         }
     }
-    
-    func loadMore(step: Int) {
-//         self.navigationController?.isNavigationBarHidden = false
-        let param : [String : Any] = [
-            "step": step]
-        self.startAnimating()
-        RequestHandler.getRequestWithoutAuth(url: Constants.URL.GET_MORE_PRODUCTS, params: param as NSDictionary, success: { (successResponse) in
-            self.stopAnimating()
-            let dictionary = successResponse as! [String: Any]
-            
-            let data = dictionary["data"] as! [String: Any]
-                    
-            
-            var product: ProductModel!
-            
-            let latest = data["latest_ads"] as! [String: Any]
-            
-            if let temp = latest["products"] as? [[String: Any]] {
-                self.latestArray = [ProductModel]()
-                for item in temp {
-                    product = ProductModel(fromDictionary: item)
-                    self.latestArray.append(product)
-                }
-                
-            }
-            self.tableView.reloadData()
-                    
-        }) { (error) in
-            let alert = Alert.showBasicAlert(message: error.message)
-                    self.presentVC(alert)
-        }
-    }
-
+   
     //MARK:- Send fcm token to server
     func sendFCMToken() {
 //        var fcmToken = ""

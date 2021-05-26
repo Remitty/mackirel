@@ -10,7 +10,6 @@
 		32218C16D4A72A493EE0A526 /* Pods_Mackirel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5D60DD7AA87C8E551E851D /* Pods_Mackirel.framework */; };
 		BF5CD272537F3EA3BFCE70F5 /* Pods_Mackirel_MackirelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077A6DCA302094582E565414 /* Pods_Mackirel_MackirelUITests.framework */; };
 		D30173F7265AA9540040D2FB /* SearchSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30173F6265AA9540040D2FB /* SearchSectionCell.xib */; };
-		D30173FD265BA3D90040D2FB /* TileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = D30173FB265BA3D90040D2FB /* TileSet.sks */; };
 		D30173FE265BA3D90040D2FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30173FC265BA3D90040D2FB /* Assets.xcassets */; };
 		D3084DE12655E7C500CDB793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3084DE02655E7C500CDB793 /* AppDelegate.swift */; };
 		D3084DE32655E7C500CDB793 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3084DE22655E7C500CDB793 /* SceneDelegate.swift */; };
@@ -96,7 +95,6 @@
 		9C5D60DD7AA87C8E551E851D /* Pods_Mackirel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mackirel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C65B361B4D758CF5FE7BEC1 /* Pods-Mackirel-MackirelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mackirel-MackirelUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mackirel-MackirelUITests/Pods-Mackirel-MackirelUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D30173F6265AA9540040D2FB /* SearchSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSectionCell.xib; sourceTree = "<group>"; };
-		D30173FB265BA3D90040D2FB /* TileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSet.sks; sourceTree = "<group>"; };
 		D30173FC265BA3D90040D2FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3084DDD2655E7C500CDB793 /* Mackirel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mackirel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3084DE02655E7C500CDB793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 		D3084DD42655E7C500CDB793 = {
 			isa = PBXGroup;
 			children = (
-				D30173FB265BA3D90040D2FB /* TileSet.sks */,
 				D30173FC265BA3D90040D2FB /* Assets.xcassets */,
 				D3084DDF2655E7C500CDB793 /* Mackirel */,
 				D3084DF62655E7CD00CDB793 /* MackirelTests */,
@@ -545,7 +542,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D30173FD265BA3D90040D2FB /* TileSet.sks in Resources */,
 				D3084DED2655E7CC00CDB793 /* LaunchScreen.storyboard in Resources */,
 				D35B0BED26583DFA0075B00E /* ProductCell.xib in Resources */,
 				D30173F7265AA9540040D2FB /* SearchSectionCell.xib in Resources */,

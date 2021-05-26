@@ -7,12 +7,13 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
 
 protocol ProductDetailDelegate{
     func goToProductDetail(id : Int)
 }
 
-class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, NVActivityIndicatorViewable {
 
     //MARK:- Outlets
     @IBOutlet weak var containerView: UIView! {
@@ -46,6 +47,9 @@ class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollection
     var delegate : ProductDetailDelegate?
     
     var cell:  ProductCell!
+    
+    var waiting = false
+    var step = 0
 
     var btnViewAll :(()->())?
     
@@ -128,6 +132,13 @@ class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollection
                 cell.transform = CGAffineTransform.identity
             })
         }
+        
+        print(indexPath.row)
+        if indexPath.row == (dataArray.count - 1) && !self.waiting  {
+                   waiting = true
+            self.step += 1
+                   self.loadMore()
+               }
     }
     
     
@@ -136,6 +147,45 @@ class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollection
     @IBAction func actionViewAll(_ sender: Any) {
         self.btnViewAll?()
     }
+    
+    
+    func loadMore() {
+//         self.navigationController?.isNavigationBarHidden = false
+        let param : [String : Any] = [
+            "step": self.step]
+//        self.startAnimating()
+        RequestHandler.getRequestWithoutAuth(url: Constants.URL.GET_MORE_PRODUCTS, params: param as NSDictionary, success: { (successResponse) in
+//            self.stopAnimating()
+            let dictionary = successResponse as! [String: Any]
+            self.waiting = false
+            
+            let data = dictionary["data"] as! [String: Any]
+                    
+            
+            var product: ProductModel!
+            
+            let latest = data["latest_ads"] as! [String: Any]
+            
+            if let temp = latest["products"] as? [[String: Any]] {
+                
+                for item in temp {
+                    product = ProductModel(fromDictionary: item)
+                    self.dataArray.append(product)
+                }
+                
+            }
+            if self.dataArray.count > 0 {
+                
+                self.reloadData()
+            }
+                    
+        }) { (error) in
+//            let alert = Alert.showBasicAlert(message: error.message)
+//                    self.presentVC(alert)
+            self.waiting = false
+        }
+    }
+
 }
 
 extension ProductsTableCell: AdaptiveCollectionLayoutDelegate {
@@ -144,12 +194,23 @@ extension ProductsTableCell: AdaptiveCollectionLayoutDelegate {
         let objData = dataArray[indexPath.row]
         let columnWidth = self.frame.width / CGFloat(AdaptiveCollectionConfig.numberOfColumns)
         if objData.image != nil {
-            let imageData: NSData =  try! NSData(contentsOf: URL(string: objData.image)!)!
-            let image = UIImage(data: imageData as Data)
-            let height: CGFloat = (image?.size.height)!
-            let width: CGFloat = (image?.size.width)!
-            let rate = width / columnWidth
-            return CGFloat(height/rate)
+            do {
+                var url = URL(string: objData.image) as? URL
+                if url != nil {
+                    let imageData: NSData =  try NSData(contentsOf: url!)!
+                    let image = UIImage(data: imageData as Data)
+                    let height: CGFloat = (image?.size.height)!
+                    let width: CGFloat = (image?.size.width)!
+                    let rate = width / columnWidth
+                    return CGFloat(height/rate)
+                } else {
+                    return columnWidth
+                }
+                
+            } catch {
+                return columnWidth
+            }
+            
         }
         else {
             return columnWidth
