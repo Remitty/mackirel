@@ -10,22 +10,29 @@ import NVActivityIndicatorView
 import UserNotifications
 import IQKeyboardManagerSwift
 
-var currentVc: UIViewController!
-
-class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVActivityIndicatorViewable, ProductDetailDelegate, CategoryDetailDelegate, UISearchBarDelegate, UNUserNotificationCenterDelegate, NearBySearchDelegate, UIGestureRecognizerDelegate {
+class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVActivityIndicatorViewable, UISearchBarDelegate, UNUserNotificationCenterDelegate, NearBySearchDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate {
     
-    //MARK:- Outlets
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
-            tableView.tableFooterView = UIView()
+            
             tableView.showsVerticalScrollIndicator = false
             tableView.separatorStyle = .none
-            tableView.register(UINib(nibName: "SearchSectionCell", bundle: nil), forCellReuseIdentifier: "SearchSectionCell")
+            
             
         }
     }
+    
+    @IBOutlet weak var txtSearch: UITextField! {
+        didSet {
+            txtSearch.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var catsView: CatsTableCell!
+    
+    
     
     let keyboardManager = IQKeyboardManager.shared
     
@@ -46,7 +53,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
     var isShowCategoryButton = false
     
     var featurePosition = ""
-    var animalSectionTitle = ""
+    var animalSectionTitle = "New Arrivals"
     var isNavSearchBarShowing = false
     let searchBarNavigation = UISearchBar()
     var backgroundView = UIView()
@@ -57,9 +64,12 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
     var viewAllText = ""
     var catLocationTitle = ""
     var nearByTitle = ""
+    
     var latitude: Double = 0
     var longitude: Double = 0
     var searchDistance:CGFloat = 0
+    var pageNumber: Int = 0
+    var catId: Int = -1
     //var homeTitle = ""
     var numberOfColumns:CGFloat = 0
     
@@ -75,6 +85,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
     override func viewDidLoad() {
         super.viewDidLoad()
         // self.navigationController?.isNavigationBarHidden = false
+        
+        catsView.delegate = self
         
         
         self.hideKeyboard()
@@ -100,20 +112,6 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
     
     func showLoader(){
         self.startAnimating(Constants.activitySize.size, message: Constants.loaderMessages.loadingMessage.rawValue,messageFont: UIFont.systemFont(ofSize: 14), type: NVActivityIndicatorType.ballClipRotatePulse)
-    }
-    
-    //MARK:- go to add detail controller
-    func goToProductDetail(id: Int) {
-        let addDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
-        addDetailVC.ad_id = id
-        self.navigationController?.pushViewController(addDetailVC, animated: true)
-    }
-    
-    //MARK:- go to category detail
-    func goToCategoryDetail(id: Int) {
-//        let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "CategoryController") as! CategoryController
-//        categoryVC.categoryID = id
-//        self.navigationController?.pushViewController(categoryVC, animated: true)
     }
     
     //MARK:- Go to Location detail
@@ -266,20 +264,13 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
         var value = 0
         
             // Else Condition of Second Type
-        
-        if section == 0 { // search section
-            value = 1
-        }
-        else if section == 1 { // category
-           value = 1
-       }
-        else if section == 2 { // feature
+        if section == 0 { // feature
             if isShowFeature {
                 value = 1
             } else {
                 value = 0
             }
-        }else if section == 3 { // latest
+        }else if section == 1 { // latest
             value = 1
         }
         
@@ -290,21 +281,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
         let section = indexPath.section
  
             switch section {
-            case 0:
-                let cell: SearchSectionCell = tableView.dequeueReusableCell(withIdentifier: "SearchSectionCell", for: indexPath) as! SearchSectionCell
-                
-                return cell
             
-            case 1:
-                let cell: CatsTableCell = tableView.dequeueReusableCell(withIdentifier: "CatsTableCell", for: indexPath) as! CatsTableCell
-                
-                cell.numberOfColums = self.numberOfColumns
-                
-                cell.categoryArray  = self.categoryArray
-                cell.delegate = self
-                cell.collectionView.reloadData()
-                return cell
-            case 2:
+            case 0:
                 if isShowFeature {
                     let cell: FeaturedProductTableCell = tableView.dequeueReusableCell(withIdentifier: "FeaturedProductTableCell", for: indexPath) as! FeaturedProductTableCell
 
@@ -313,12 +291,13 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
                     cell.collectionView.reloadData()
                     return cell
                 }
-            case 3:
+            case 1:
                 if isShowLatest {
                     let cell: ProductsTableCell  = tableView.dequeueReusableCell(withIdentifier: "ProductsTableCell", for: indexPath) as! ProductsTableCell
 
                     cell.delegate = self
                     cell.dataArray = self.latestArray
+                    cell.lblSectionTitle.text = self.animalSectionTitle
 //                    heightConstraintTitleLatestad = Int(cell.heightConstraintTitle.constant)
                     cell.collectionView.reloadData()
                     return cell
@@ -337,15 +316,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
         let section = indexPath.section
         var totalHeight : CGFloat = 0
         var height: CGFloat = 0
-        
-           
-            if section == 0 {
-                height = 65
-            }
-            else if section == 1 {
-                height = 100
-            }
-             else if section == 2 {
+        if section == 0 {
                 if self.isShowFeature {
                     if featuredArray.isEmpty {
                         height = 0
@@ -355,7 +326,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
                 } else {
                     height = 0
                 }
-            } else if section ==  3 {
+            } else if section ==  1 {
                 if self.isShowLatest {
                     height = CGFloat(590 + heightConstraintTitleLatestad)
                 } else {
@@ -379,7 +350,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 4
+        return 2
     }
     
     //MARK:- API Call
@@ -403,7 +374,9 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
                     cat = CatModel(fromDictionary: item)
                     self.categoryArray.append(cat)
                 }
-                self.numberOfColumns = CGFloat(self.categoryArray.count)
+                self.catsView.numberOfColums = CGFloat(self.categoryArray.count)
+                self.catsView.categoryArray = self.categoryArray
+                self.catsView.collectionView.reloadData()
             }
             
             var product: ProductModel!
@@ -478,5 +451,89 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
 //            let alert = Constants.showBasicAlert(message: error.message)
 //            self.presentVC(alert)
 //        }
+    }
+    
+    func searchProducts() {
+        let param: [String: Any] = [
+            "page_number": self.pageNumber,
+            "catId": self.catId
+        ]
+        self.startAnimating()
+        RequestHandler.getRequestWithoutAuth(url: Constants.URL.SEARCH_PRODUTS, params: param as NSDictionary, success: { (successResponse) in
+            self.stopAnimating()
+            let dictionary = successResponse as! [String: Any]
+            
+            
+            let data = dictionary["data"] as! [String: Any]
+                    
+            self.animalSectionTitle = data["query"] as! String
+            
+            var product: ProductModel!
+            
+            if let featured = data["featured"] as? [[String: Any]] {
+                if self.pageNumber == 0 {
+                    
+                    self.featuredArray = [ProductModel]()
+                }
+                for item in featured {
+                    product = ProductModel(fromDictionary: item)
+                    self.featuredArray.append(product)
+                }
+                
+            }
+            
+            if let latest = data["products"] as? [[String: Any]] {
+                if self.pageNumber == 0 {
+                    
+                    self.latestArray = [ProductModel]()
+                }
+                for item in latest {
+                    product = ProductModel(fromDictionary: item)
+                    self.latestArray.append(product)
+                }
+                
+                if latest.count > 0 {
+                    
+                    self.tableView.reloadData()
+                }
+                
+            }
+            
+            
+                    
+        }) { (error) in
+            self.stopAnimating()
+            
+            self.showToast(message: error.message)
+            
+        }
+    }
+}
+
+extension HomeVC: ProductsTableCellDelegate {
+    func loadMore(step: Int) {
+        self.pageNumber = step
+        searchProducts()
+    }
+    //MARK:- go to add detail controller
+    func goToProductDetail(id: Int) {
+        print("detail\(id)")
+        let addDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
+        addDetailVC.ad_id = id
+        self.navigationController?.pushViewController(addDetailVC, animated: true)
+    }
+}
+
+extension HomeVC: CategoryDetailDelegate {
+    
+    //MARK:- go to category detail
+    func goToCategoryDetail(id: Int) {
+        print("gere\(id)")
+        self.catId = id
+        self.pageNumber = 0
+        self.searchProducts()
+//        let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "CategoryController") as! CategoryController
+//        categoryVC.categoryID = id
+//        self.navigationController?.pushViewController(categoryVC, animated: true)
     }
 }

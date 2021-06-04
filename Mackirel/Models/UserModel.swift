@@ -8,6 +8,7 @@
 import Foundation
 
 struct UserModel {
+    var id: String!
     var first_name: String!
     var last_name: String!
     var phone: String!
@@ -22,11 +23,16 @@ struct UserModel {
     var profile: UserProfileModel!
     
     init(fromDictionary dictionary: [String: Any]) {
-        profile = UserProfileModel.init(fromDictionary:dictionary["profile"] as! [String : Any])
+        id = dictionary["id"] as? String
         first_name = dictionary["first_name"] as? String
         last_name = dictionary["last_name"] as? String
         phone = dictionary["mobile"] as? String
         email = dictionary["email"] as? String
+        guard let profiledata = dictionary["profile"] as? [String : Any] else {
+            return
+        }
+        
+        profile = UserProfileModel.init(fromDictionary:profiledata)
         dob = profile.dob
         address = profile.address
         address2 = profile.address2
@@ -34,6 +40,8 @@ struct UserModel {
         country = profile.country
         national = profile.national
         postal_code = profile.postal_code
+        
+        
         
         
     }

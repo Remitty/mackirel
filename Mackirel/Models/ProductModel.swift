@@ -10,27 +10,34 @@ import Foundation
 struct ProductModel {
     
     var id : Int!
-    var type : String!
-    var path : String!
+    
+    var title : String!
+    var description: String!
     var date : String!
     var location : String!
-    var title : String!
+    var address: String!
+    
     var images : [ProductImage]!
     var image: String!
-    var isFav : Bool!
+    var isShipping : Bool!
     var price : Double!
+    var shipPrice: Double!
     var qty: Int!
+    var currency: Int!
+    var lat: Double!
+    var long: Double!
     
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
         id = dictionary["id"] as? Int
-        type = dictionary["type"] as? String
-        path = dictionary["path"] as? String
-        date = dictionary["updated_at"] as? String
-        location = dictionary["location"] as? String
         title = dictionary["title"] as? String
+        description = dictionary["description"] as? String
+//        date = dictionary["updated_at"] as? String
+        location = dictionary["location"] as? String
+        address = dictionary["address"] as? String
+        
         if let imagesTemp = dictionary["images"] as? [[String: Any]] {
             
             var imageTemp: ProductImage!
@@ -54,8 +61,27 @@ struct ProductModel {
             price =  dictionary["unit_price"] as! Double
         }
         
+        if let priceTemp = (dictionary["shipping_price"] as? NSString)?.doubleValue {
+            shipPrice = priceTemp
+        } else {
+            shipPrice =  dictionary["shipping_price"] as! Double
+        }
+        
+        isShipping = (dictionary["isShipping"] as? Int) == 1 ? true : false
         qty = dictionary["qty"] as? Int
-        isFav = dictionary["isFav"] as? Bool
+        currency = dictionary["currency"] as? Int
+        
+        if let temp = (dictionary["latitude"] as? NSString)?.doubleValue {
+            lat = temp
+        } else {
+            lat =  dictionary["latitude"] as! Double
+        }
+        if let temp = (dictionary["longitude"] as? NSString)?.doubleValue {
+            long = temp
+        } else {
+            long =  dictionary["longitude"] as! Double
+        }
+        
     }
     
     

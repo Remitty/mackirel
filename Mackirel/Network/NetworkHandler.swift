@@ -290,6 +290,37 @@ class NetworkHandler {
             }
         }
     }
+    
+    class func uploadImageArray(url: String, imagesArray: [UIImage], fileName: String, params: Parameters?, uploadProgress: @escaping (Int) -> Void, success: @escaping (Any?) -> Void, failure: @escaping (NetworkError) -> Void) {
+        
+        var headers: HTTPHeaders
+        
+        let userAuthToken = UserDefaults.standard.object(forKey: "access_token") as! String
+        headers = [
+            "Accept": "application/json",
+            "Authorization": "Bearer \(userAuthToken)",
+            ]
+        for image in imagesArray {
+      
+            if let imageData = image.jpegData(compressionQuality: 0.5) {
+                AF.upload(multipartFormData: { multipartFormData in
+                    multipartFormData.append(imageData,  withName: "image", fileName: fileName , mimeType: "image/jpeg")
+                    if let parameters = params {
+                        for (key, value) in parameters {
+                            
+                            multipartFormData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)
+                        }
+                    }
+                }, to: url)
+                .uploadProgress{ progress in
+                    let progress = Int(progress.fractionCompleted * 100)
+                    uploadProgress(progress)
+                }
+            
+            }
+        }
+         
+    }
 }
 
 

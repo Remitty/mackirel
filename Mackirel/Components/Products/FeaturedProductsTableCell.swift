@@ -28,7 +28,7 @@ class FeaturedProductTableCell: UITableViewCell, UICollectionViewDelegate, UICol
     }
     
     //MARK:- Properties
-    var delegate: ProductDetailDelegate?
+    var delegate: ProductsTableCellDelegate?
     var dataArray = [ProductModel]()
     
     

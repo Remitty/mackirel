@@ -29,6 +29,7 @@ class CatCell: UICollectionViewCell {
     
     
     @IBAction func actionFullButton(_ sender: Any) {
+        
         self.btnFullAction?()
     }
     

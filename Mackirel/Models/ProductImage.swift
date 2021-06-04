@@ -10,7 +10,7 @@ import Foundation
 struct ProductImage {
     
     var full : String!
-    var imgId : String!
+    var imgId : Int!
     var thumb : String!
     
     
@@ -19,7 +19,7 @@ struct ProductImage {
      */
     init(fromDictionary dictionary: [String:Any]){
         full = dictionary["full"] as? String
-        imgId = dictionary["img_id"] as? String
+        imgId = dictionary["img_id"] as? Int
         thumb = dictionary["thumb"] as? String
         if !thumb.starts(with: "http") {
             thumb = Constants.URL.resource_url + thumb

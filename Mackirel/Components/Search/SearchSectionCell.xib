@@ -20,10 +20,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="348" height="64"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oy9-9N-tkP">
-                                <rect key="frame" x="20" y="5" width="308" height="45"/>
+                                <rect key="frame" x="5" y="9.5" width="338" height="45"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfQ-JE-wu4">
-                                        <rect key="frame" x="263" y="0.0" width="45" height="45"/>
+                                        <rect key="frame" x="293" y="0.0" width="45" height="45"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkF-Xg-MAl">
                                                 <rect key="frame" x="8" y="8" width="29" height="29"/>
@@ -44,7 +44,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NIP-b5-Q3k">
-                                        <rect key="frame" x="8" y="0.0" width="255" height="45"/>
+                                        <rect key="frame" x="8" y="0.0" width="285" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                     </textField>
@@ -64,9 +64,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="oy9-9N-tkP" secondAttribute="trailing" constant="20" id="OAW-X2-SPV"/>
-                            <constraint firstItem="oy9-9N-tkP" firstAttribute="leading" secondItem="NAE-VD-2Ja" secondAttribute="leading" constant="20" id="nMg-rW-DmC"/>
-                            <constraint firstItem="oy9-9N-tkP" firstAttribute="top" secondItem="NAE-VD-2Ja" secondAttribute="top" constant="5" id="xMk-Qh-e0M"/>
+                            <constraint firstAttribute="trailing" secondItem="oy9-9N-tkP" secondAttribute="trailing" constant="5" id="OAW-X2-SPV"/>
+                            <constraint firstItem="oy9-9N-tkP" firstAttribute="leading" secondItem="NAE-VD-2Ja" secondAttribute="leading" constant="5" id="nMg-rW-DmC"/>
+                            <constraint firstItem="oy9-9N-tkP" firstAttribute="centerY" secondItem="NAE-VD-2Ja" secondAttribute="centerY" id="xMk-Qh-e0M"/>
                         </constraints>
                     </view>
                 </subviews>

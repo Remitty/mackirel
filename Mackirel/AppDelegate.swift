@@ -8,6 +8,8 @@
 import UIKit
 import SlideMenuControllerSwift
 import Firebase
+import GooglePlaces
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 //        FirebaseApp.configure()
+        GMSPlacesClient.provideAPIKey("AIzaSyAmYFlkNst4ayCNWR3cx2NwKqAPXV6Y-HQ")
+        GMSServices.provideAPIKey("AIzaSyAmYFlkNst4ayCNWR3cx2NwKqAPXV6Y-HQ")
         return true
     }
 

@@ -13,7 +13,7 @@ protocol CategoryDetailDelegate {
     func goToCategoryDetail(id: Int)
 }
 
-class CatsTableCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CatsTableCell: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //MARK:- Outlets
     @IBOutlet weak var containerView: UIView! {
@@ -60,7 +60,7 @@ class CatsTableCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     //MARK:- View Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
+//        selectionStyle = .none
     }
 
     //MARK:- Collection View Delegate Methods
@@ -81,50 +81,16 @@ class CatsTableCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
             cell.lblName.text = name
         }
         if let imgUrl = URL(string: objData.img) {
-//            cell.imgPicture.sd_setShowActivityIndicatorView(true)
-//            cell.imgPicture.sd_setIndicatorStyle(.gray)
-//            cell.imgPicture.sd_setImage(with: imgUrl, completed: nil)
             cell.imgPicture.load(url: imgUrl)
         }
         
         cell.btnFullAction = { () in
+            
             self.delegate?.goToCategoryDetail(id: objData.id)
         }
         return cell
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if numberOfColums == 3 {
-////            if Constants.isiPadDevice {
-//                return CGSize(width: self.frame.width / 5 - 5, height: 170)
-////            }
-////            else if Constants.isIphonePlus {
-////                let itemWidth = CollectionViewSettings.getItemWidth(boundWidth: collectionView.bounds.size.width)
-////                return CGSize(width: itemWidth - 10, height: itemWidth)
-////            }
-////            else {
-////                let itemWidth = CollectionViewSettings.getItemWidth(boundWidth: collectionView.bounds.size.width)
-////                return CGSize(width: itemWidth, height: itemWidth + 10)
-////            }
-//        } else {
-////            if Constants.isiPadDevice {
-//                return CGSize(width: self.frame.width / 5 - 5, height: 170)
-////            }
-////            else if Constants.isiPhone5 {
-////                let itemWidth = CollectionViewForuCell.getItemWidth(boundWidth: collectionView.bounds.size.width)
-////                return CGSize(width: itemWidth, height: itemWidth + 40)
-////            }
-////            else if Constants.isIphonePlus {
-////                let itemWidth = CollectionViewForuCell.getItemWidth(boundWidth: collectionView.bounds.size.width)
-////                return CGSize(width: itemWidth, height: itemWidth + 30)
-////            }
-////            else {
-////                let itemWidth = CollectionViewForuCell.getItemWidth(boundWidth: collectionView.bounds.size.width)
-////                return CGSize(width: itemWidth, height: itemWidth + 30)
-////            }
-//        }
-//    }
-//
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }
@@ -136,9 +102,5 @@ class CatsTableCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
-    //MARK:- IBActions
-    @IBAction func actionViewAll(_ sender: Any) {
-        self.btnViewAll?()
-    }
+
 }

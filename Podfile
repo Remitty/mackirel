@@ -40,10 +40,11 @@ target 'Mackirel' do
     ##pod 'Cosmos'
     
     #TextField Effects
-    pod "TextFieldEffects"
+    #pod "TextFieldEffects"
     
     # DropDown Menu
     pod 'DropDown'
+    pod 'RadioGroup'
     
     #Device Identification
     pod 'DeviceKit'
