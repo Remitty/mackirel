@@ -96,4 +96,6 @@ target 'Mackirel' do
     pod 'JGProgressHUD'
     
     pod 'MaterialComponents/Cards'
+    
+    pod 'SQLite.swift', '~> 0.12.0'
 end

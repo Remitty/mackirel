@@ -24,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        FirebaseApp.configure()
         GMSPlacesClient.provideAPIKey("AIzaSyAmYFlkNst4ayCNWR3cx2NwKqAPXV6Y-HQ")
         GMSServices.provideAPIKey("AIzaSyAmYFlkNst4ayCNWR3cx2NwKqAPXV6Y-HQ")
+        
+        
+        
+        DBCart().onCreate()
+        DBFav().onCreate()
         return true
     }
 

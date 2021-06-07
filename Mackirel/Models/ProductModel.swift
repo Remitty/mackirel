@@ -16,9 +16,10 @@ struct ProductModel {
     var date : String!
     var location : String!
     var address: String!
-    
+    var type: String!
     var images : [ProductImage]!
     var image: String!
+    var isFeatured: Bool!
     var isShipping : Bool!
     var price : Double!
     var shipPrice: Double!
@@ -66,6 +67,8 @@ struct ProductModel {
         } else {
             shipPrice =  dictionary["shipping_price"] as! Double
         }
+        
+        isFeatured = (dictionary["isFeatured"] as? Int) == 1 ? true : false
         
         isShipping = (dictionary["isShipping"] as? Int) == 1 ? true : false
         qty = dictionary["qty"] as? Int

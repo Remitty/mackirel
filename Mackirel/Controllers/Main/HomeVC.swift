@@ -522,6 +522,8 @@ extension HomeVC: ProductsTableCellDelegate {
         addDetailVC.ad_id = id
         self.navigationController?.pushViewController(addDetailVC, animated: true)
     }
+    
+    
 }
 
 extension HomeVC: CategoryDetailDelegate {

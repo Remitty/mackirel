@@ -114,6 +114,12 @@ class ProductDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 }
                 let btnPriceLabel: Double = product.price!
                 cell.btnPrice.setTitle(PriceFormat(amount: product.price, currency: .usd).description, for: .normal)
+                cell.addCart = {() in
+                    if DBCart().addCartItem(product: self.product) {
+                        cell.btnAddCart.isHidden = true
+                        self.showToast(message: "Added into cart successfully")
+                    }
+                }
 //                cell.btnPrice.titleLabel?.font = UIFont.systemFont(ofSize: 15)
 //                let buttonTitleSize = ("\(btnPriceLabel)" as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15+1)])
 //                print(btnPriceLabel)

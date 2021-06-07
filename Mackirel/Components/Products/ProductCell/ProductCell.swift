@@ -22,11 +22,20 @@ class ProductCell: UICollectionViewCell {
         }
     }
     
+    @IBOutlet weak var imgFav: UIButton!
+    
     //MARK:- Properties
     
     var btnActionFull: (()->())?
+    var addCart: (()->())?
+    var addFav: (()->())?
     
     @IBAction func actionBigbutton(_ sender: Any) {
         self.btnActionFull?()
+    }
+    
+
+    @IBAction func actionAddFav(_ sender: Any) {
+        self.addFav?()
     }
 }

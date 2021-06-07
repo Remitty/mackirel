@@ -12,6 +12,7 @@ import NVActivityIndicatorView
 protocol ProductsTableCellDelegate{
     func goToProductDetail(id : Int)
     func loadMore(step: Int)
+    
 }
 
 class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, NVActivityIndicatorViewable {
@@ -30,6 +31,7 @@ class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollection
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.showsHorizontalScrollIndicator = false
+            collectionView.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
         }
     }
     
@@ -78,6 +80,7 @@ class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
         let objData = dataArray[indexPath.row]
+        
         if let imgUrl = objData.image {
             cell.imgPicture.load(url: URL(string: imgUrl)!)
         }
@@ -86,6 +89,22 @@ class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollection
         cell.btnActionFull = { () in
             self.delegate?.goToProductDetail(id: objData.id)
         }
+        cell.addFav = { () in
+//            self.delegate?.addFav(id: objData.id)
+            if DBFav().insertFav(product: objData) {
+                
+                if DBFav().getUserFavIds().contains(objData.id) {
+                    self.cell.imgFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                } else {
+                    self.cell.imgFav.setImage(UIImage(systemName: "heart"), for: .normal)
+                }
+            }
+        }
+        
+        if DBFav().getUserFavIds().contains(objData.id) {
+            self.cell.imgFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        
         return cell
     }
     

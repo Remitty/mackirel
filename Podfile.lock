@@ -121,6 +121,9 @@ PODS:
   - SDWebImage/Core (5.11.1)
   - SlideMenuControllerSwift (5.0.0)
   - SnapKit (5.0.1)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
   - SweeterSwift (1.1.4)
   - SwiftCheckboxDialog (1.0.1)
   - "UITextField+Shake (1.2.1)"
@@ -148,6 +151,7 @@ DEPENDENCIES:
   - RangeSeekSlider
   - SDWebImage
   - SlideMenuControllerSwift (from `https://github.com/AtomicSLLC/SlideMenuControllerSwift.git`, branch `swift5`)
+  - SQLite.swift (~> 0.12.0)
   - SwiftCheckboxDialog
   - "UITextField+Shake"
   - XLPagerTabStrip (~> 8.1)
@@ -184,6 +188,7 @@ SPEC REPOS:
     - RangeSeekSlider
     - SDWebImage
     - SnapKit
+    - SQLite.swift
     - SweeterSwift
     - SwiftCheckboxDialog
     - "UITextField+Shake"
@@ -231,11 +236,12 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SlideMenuControllerSwift: d740ea24105a658fe6a8c256f2bf5832fee7c047
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
   SwiftCheckboxDialog: edfabc33371022c5c6ab0527a04b4d0f84bbe034
   "UITextField+Shake": 298ac5a0f239d731bdab999b19b628c956ca0ac3
   XLPagerTabStrip: 63166e21c9844fa30f2d95d30f335e73be5caf22
 
-PODFILE CHECKSUM: 469bfc97cdd0aac18002da64aa9f24efa8154398
+PODFILE CHECKSUM: 96e3ee7f7e9094118dd092327862ebabb651e09a
 
 COCOAPODS: 1.10.1
