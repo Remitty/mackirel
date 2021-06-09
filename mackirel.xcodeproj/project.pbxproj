@@ -26,6 +26,11 @@
 		D33941E4266CFEE30007F09F /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33941E3266CFEE20007F09F /* CartCell.swift */; };
 		D33941EC266CFFFA0007F09F /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33941EB266CFFFA0007F09F /* CartCell.xib */; };
 		D33941F2266E2A730007F09F /* ShippingAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33941F1266E2A720007F09F /* ShippingAddressVC.swift */; };
+		D33941FA266E3F820007F09F /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33941F9266E3F810007F09F /* PaymentVC.swift */; };
+		D3394203266E4B120007F09F /* BalancelPaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3394202266E4B120007F09F /* BalancelPaymentCell.swift */; };
+		D3394208266E4BF40007F09F /* OtherPaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3394207266E4BF30007F09F /* OtherPaymentCell.swift */; };
+		D339420D266E4C300007F09F /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D339420C266E4C300007F09F /* PaymentCell.xib */; };
+		D3394215266E74C60007F09F /* ShippingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3394214266E74C50007F09F /* ShippingModel.swift */; };
 		D35B0B8C26572DD60075B00E /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0B8B26572DD60075B00E /* ProductDetailVC.swift */; };
 		D35B0B95265730270075B00E /* SimilarProductsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0B94265730270075B00E /* SimilarProductsTableCell.swift */; };
 		D35B0B9B265732250075B00E /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0B9A265732250075B00E /* ProductCell.swift */; };
@@ -131,6 +136,11 @@
 		D33941E3266CFEE20007F09F /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		D33941EB266CFFFA0007F09F /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
 		D33941F1266E2A720007F09F /* ShippingAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingAddressVC.swift; sourceTree = "<group>"; };
+		D33941F9266E3F810007F09F /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
+		D3394202266E4B120007F09F /* BalancelPaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancelPaymentCell.swift; sourceTree = "<group>"; };
+		D3394207266E4BF30007F09F /* OtherPaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPaymentCell.swift; sourceTree = "<group>"; };
+		D339420C266E4C300007F09F /* PaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
+		D3394214266E74C50007F09F /* ShippingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingModel.swift; sourceTree = "<group>"; };
 		D35B0B8B26572DD60075B00E /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		D35B0B94265730270075B00E /* SimilarProductsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarProductsTableCell.swift; sourceTree = "<group>"; };
 		D35B0B9A265732250075B00E /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
@@ -322,8 +332,19 @@
 			isa = PBXGroup;
 			children = (
 				D33941F1266E2A720007F09F /* ShippingAddressVC.swift */,
+				D33941F9266E3F810007F09F /* PaymentVC.swift */,
 			);
 			path = Payments;
+			sourceTree = "<group>";
+		};
+		D33941FE266E4AE90007F09F /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				D3394202266E4B120007F09F /* BalancelPaymentCell.swift */,
+				D3394207266E4BF30007F09F /* OtherPaymentCell.swift */,
+				D339420C266E4C300007F09F /* PaymentCell.xib */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 		D35B0B8A26572DA90075B00E /* Products */ = {
@@ -427,6 +448,7 @@
 				D35B0BA926573FFA0075B00E /* CatModel.swift */,
 				D33941D3266B273D0007F09F /* CartModel.swift */,
 				D33941DD266BC6D00007F09F /* FavModel.swift */,
+				D3394214266E74C50007F09F /* ShippingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -444,6 +466,7 @@
 		D3FDBE902655EE5500923BA9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D33941FE266E4AE90007F09F /* Payment */,
 				D33941E2266CFEA40007F09F /* Cart */,
 				D3DF2C4B2665D894001812FE /* PostProduct */,
 				D3BB0B0226628B0C00D8DF7E /* ProductDetail */,
@@ -627,6 +650,7 @@
 				D3084DED2655E7CC00CDB793 /* LaunchScreen.storyboard in Resources */,
 				D33941EC266CFFFA0007F09F /* CartCell.xib in Resources */,
 				D35B0BED26583DFA0075B00E /* ProductCell.xib in Resources */,
+				D339420D266E4C300007F09F /* PaymentCell.xib in Resources */,
 				D30173F7265AA9540040D2FB /* SearchSectionCell.xib in Resources */,
 				D30173FE265BA3D90040D2FB /* Assets.xcassets in Resources */,
 				D3084DEA2655E7CC00CDB793 /* Assets.xcassets in Resources */,
@@ -809,14 +833,18 @@
 				D35B0BDD265751DB0075B00E /* SearchVC.swift in Sources */,
 				D3FDBF2A265697F500923BA9 /* UserModel.swift in Sources */,
 				D35B0B95265730270075B00E /* SimilarProductsTableCell.swift in Sources */,
+				D3394208266E4BF40007F09F /* OtherPaymentCell.swift in Sources */,
 				D35B0BD826574EA80075B00E /* ImageView.swift in Sources */,
+				D3394215266E74C60007F09F /* ShippingModel.swift in Sources */,
 				D35B0BE8265755F60075B00E /* FeaturedProductsTableCell.swift in Sources */,
+				D33941FA266E3F820007F09F /* PaymentVC.swift in Sources */,
 				D3FDBF3E2656C12F00923BA9 /* MyCartVC.swift in Sources */,
 				D3FDBF112656939000923BA9 /* ChangePasswordVC.swift in Sources */,
 				D3DF2C3F2665052A001812FE /* ImageSlideCell.swift in Sources */,
 				D3DF2C522665D905001812FE /* CollectionImageCell.swift in Sources */,
 				D3FDBF16265694DE00923BA9 /* ForgotPasswordVC.swift in Sources */,
 				D35B0BC826574B2C0075B00E /* CatCell.swift in Sources */,
+				D3394203266E4B120007F09F /* BalancelPaymentCell.swift in Sources */,
 				D3BB0B0C26628F0300D8DF7E /* ProductSummaryCell.swift in Sources */,
 				D3FDBEAC2655F2D600923BA9 /* LoginVC.swift in Sources */,
 				D3DF2C472665D583001812FE /* MapCell.swift in Sources */,
