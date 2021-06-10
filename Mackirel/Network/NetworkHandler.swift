@@ -22,7 +22,7 @@ class NetworkHandler {
                 
                 headers = [
                 "Accept": "application/json",
-                "Authorization": "Bearer \(userAuthToken)"
+                "Authorization": "\(userAuthToken)"
                 ]
             } else {
                 
@@ -33,7 +33,7 @@ class NetworkHandler {
 //            print(headers)
             let manager = Alamofire.Session.default
             manager.session.configuration.timeoutIntervalForRequest = Constants.NetworkError.timeOutInterval
-            print(parameters)
+            print(parameters!)
             manager.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).validate(statusCode: 200..<600).responseJSON
                 { (response) -> Void in
                     
@@ -123,7 +123,7 @@ class NetworkHandler {
             let userAuthToken = UserDefaults.standard.object(forKey: "access_token") as! String
             headers = [
                 "Accept": "application/json",
-                "Authorization": "Bearer \(userAuthToken)",
+                "Authorization": "\(userAuthToken)",
                 ]
             } else {
 
@@ -212,7 +212,7 @@ class NetworkHandler {
                 let userAuthToken = UserDefaults.standard.object(forKey: "access_token") as! String
                 headers = [
                     "Accept": "application/json",
-                    "Authorization": "Bearer \(userAuthToken)",
+                    "Authorization": "\(userAuthToken)",
                     ]
                 } else {
 
@@ -298,7 +298,7 @@ class NetworkHandler {
         let userAuthToken = UserDefaults.standard.object(forKey: "access_token") as! String
         headers = [
             "Accept": "application/json",
-            "Authorization": "Bearer \(userAuthToken)",
+            "Authorization": "\(userAuthToken)",
             ]
         for image in imagesArray {
       

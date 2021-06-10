@@ -13,7 +13,7 @@ import Alamofire
 import AlamofireImage
 import MapKit
 
-class ProductDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVActivityIndicatorViewable , SimilarProductsTableCellDelegate {
+class ProductDetailVC: UIViewController, NVActivityIndicatorViewable , SimilarProductsTableCellDelegate {
 
     //MARK:- Outlets
     
@@ -70,11 +70,110 @@ class ProductDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         addDetailVC.ad_id = id
         self.navigationController?.pushViewController(addDetailVC, animated: true)
     }
+
+    //MARK:- IBActions
+    
+    @IBAction func actionSendMessage(_ sender: Any) {
+      
+        if defaults.bool(forKey: "isLogin") == false {
+            if let msg = defaults.string(forKey: "notLogin") {
+                let alert = Alert.showBasicAlert(message: msg)
+                self.presentVC(alert)
+            }
+        } else {
+            
+            let sendMsgVC = self.storyboard?.instantiateViewController(withIdentifier: "CommentVC") as! CommentVC
+            sendMsgVC.modalPresentationStyle = .overCurrentContext
+            sendMsgVC.modalTransitionStyle = .flipHorizontal
+            
+            sendMsgVC.delegate = self
+            self.present(sendMsgVC, animated: true, completion: nil)
+            
+        }
+    }
+    
+    //MARK:- API Call
+    func getDetail(param: NSDictionary) {
+        self.startAnimating()
+        RequestHandler.getRequestWithoutAuth(url: Constants.URL.GET_PRODUCT_DETAIL, params: param as NSDictionary, success: { (successResponse) in
+            self.stopAnimating()
+            let dictionary = successResponse as! [String: Any]
+            
+            let data = dictionary["data"] as! [String: Any]
+            self.product = ProductModel(fromDictionary: data)
+            
+            self.owner = UserModel(fromDictionary: dictionary["owner"] as! [String: Any])
+            
+            var product: ProductModel!
+            
+            if let related = dictionary["related_products"] as? [[String: Any]] {
+                self.relatedAdsArray = [ProductModel]()
+                for item in related {
+                    product = ProductModel(fromDictionary: item)
+                    self.relatedAdsArray.append(product)
+                }
+                
+            }
+            self.tableView.reloadData()
+                    
+        }) { (error) in
+            let alert = Alert.showBasicAlert(message: error.message)
+                    self.presentVC(alert)
+        }
+       
+    }
+    
+    @objc func reloadTable(){
+        self.tableView.reloadData()
+    }
+ 
+    //Make Add Favourite
+    func makeAddFavourite(param: NSDictionary) {
+        self.showLoader()
+//        AddsHandler.makeAddFavourite(parameter: param, success: { (successResponse) in
+//            self.stopAnimating()
+//            if successResponse.success {
+//                let alert = Constants.showBasicAlert(message: successResponse.message)
+//                self.presentVC(alert)
+//            }
+//            else {
+//                let alert = Constants.showBasicAlert(message: successResponse.message)
+//                self.presentVC(alert)
+//            }
+//        }) { (error) in
+//            self.stopAnimating()
+//            let alert = Constants.showBasicAlert(message: error.message)
+//            self.presentVC(alert)
+//        }
+    }
+    
+}
+
+extension ProductDetailVC: moveTomessagesDelegate {
+    func isMoveMessages(message: String) {
+        self.startAnimating()
+        let param = [
+            "ad_id": self.ad_id,
+            "message": message
+        ] as! NSDictionary
+        RequestHandler.postRequest(url: Constants.URL.REQUEST_MESSAGE_CHAT, params: param as NSDictionary, success: { (successResponse) in
+            self.stopAnimating()
+            let dictionary = successResponse as! [String: Any]
+            let messagesVC = self.storyboard?.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
+    //        messagesVC.isFromAdDetail = true
+            self.navigationController?.pushViewController(messagesVC, animated: true)
+                    
+        }) { (error) in
+            let alert = Alert.showBasicAlert(message: error.message)
+                    self.presentVC(alert)
+        }
+        
+    }
     
     
-    
-    //MARK:- Table View Delegate Methods
-    
+}
+
+extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
     }
@@ -198,83 +297,4 @@ class ProductDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         return height
     }
-    
-    
-    //MARK:- IBActions
-    
-    @IBAction func actionSendMessage(_ sender: Any) {
-      
-        if defaults.bool(forKey: "isLogin") == false {
-            if let msg = defaults.string(forKey: "notLogin") {
-                let alert = Alert.showBasicAlert(message: msg)
-                self.presentVC(alert)
-            }
-        } else {
-            
-//                let msgVC = self.storyboard?.instantiateViewController(withIdentifier: "MessagesController") as! MessagesController
-//                msgVC.isFromAdDetail = true
-//                self.navigationController?.pushViewController(msgVC, animated: true)
-            
-        }
-    }
-    
-    @IBAction func actionCallNow(_ sender: UIButton) {
-        
-    }
-    
-    //MARK:- API Call
-    func getDetail(param: NSDictionary) {
-        self.startAnimating()
-        RequestHandler.getRequestWithoutAuth(url: Constants.URL.GET_PRODUCT_DETAIL, params: param as NSDictionary, success: { (successResponse) in
-            self.stopAnimating()
-            let dictionary = successResponse as! [String: Any]
-            
-            let data = dictionary["data"] as! [String: Any]
-            self.product = ProductModel(fromDictionary: data)
-            
-            self.owner = UserModel(fromDictionary: dictionary["owner"] as! [String: Any])
-            
-            var product: ProductModel!
-            
-            if let related = dictionary["related_products"] as? [[String: Any]] {
-                self.relatedAdsArray = [ProductModel]()
-                for item in related {
-                    product = ProductModel(fromDictionary: item)
-                    self.relatedAdsArray.append(product)
-                }
-                
-            }
-            self.tableView.reloadData()
-                    
-        }) { (error) in
-            let alert = Alert.showBasicAlert(message: error.message)
-                    self.presentVC(alert)
-        }
-       
-    }
-    
-    @objc func reloadTable(){
-        self.tableView.reloadData()
-    }
- 
-    //Make Add Favourite
-    func makeAddFavourite(param: NSDictionary) {
-        self.showLoader()
-//        AddsHandler.makeAddFavourite(parameter: param, success: { (successResponse) in
-//            self.stopAnimating()
-//            if successResponse.success {
-//                let alert = Constants.showBasicAlert(message: successResponse.message)
-//                self.presentVC(alert)
-//            }
-//            else {
-//                let alert = Constants.showBasicAlert(message: successResponse.message)
-//                self.presentVC(alert)
-//            }
-//        }) { (error) in
-//            self.stopAnimating()
-//            let alert = Constants.showBasicAlert(message: error.message)
-//            self.presentVC(alert)
-//        }
-    }
-    
 }
