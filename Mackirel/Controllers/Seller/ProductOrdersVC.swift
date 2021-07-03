@@ -43,6 +43,9 @@ class ProductOrdersVC: UIViewController, IndicatorInfoProvider, NVActivityIndica
 extension ProductOrdersVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.constantTableHeight.constant = CGFloat(orderList.count * 150)
+        if orderList.count > 0 {
+            self.lbEmpty.isHidden = true
+        }
         return orderList.count
     }
 

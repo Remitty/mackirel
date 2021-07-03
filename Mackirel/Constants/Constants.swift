@@ -77,6 +77,9 @@ class Constants {
         static let GET_PLAID_LINK_TOKEN = REDIRECT_URL + "plaid/linktoken";
         static let SEND_PLAID_CONNECT_BANK = REDIRECT_URL + "plaid/bank/create";
         
+        static  let GET_ALL_COINS = REDIRECT_URL + "coins/list";
+         static  let COIN_DEPOSIT = REDIRECT_URL + "coins/deposit";
+        
              
     }
     

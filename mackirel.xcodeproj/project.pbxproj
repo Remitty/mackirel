@@ -57,6 +57,10 @@
 		D3A6E8302690A619000848DF /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6E82F2690A619000848DF /* OrdersVC.swift */; };
 		D3A6E8382690A637000848DF /* OrdersHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6E8372690A637000848DF /* OrdersHistoryVC.swift */; };
 		D3A6E83D2690A64A000848DF /* BuyerPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6E83C2690A64A000848DF /* BuyerPagerVC.swift */; };
+		D3A6E84F2690BAE2000848DF /* CryptoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6E84E2690BAE2000848DF /* CryptoVC.swift */; };
+		D3A6E8542690BC7E000848DF /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6E8532690BC7D000848DF /* CoinModel.swift */; };
+		D3A6E85A2690C01F000848DF /* CoinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6E8592690C01F000848DF /* CoinItem.swift */; };
+		D3A6E8622690C068000848DF /* CoinItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A6E8612690C068000848DF /* CoinItem.xib */; };
 		D3BB0AED265BA98B00D8DF7E /* AdaptiveCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB0AEC265BA98B00D8DF7E /* AdaptiveCollectionLayout.swift */; };
 		D3BB0AF2265BA9F000D8DF7E /* AdaptiveCollectionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB0AF1265BA9F000D8DF7E /* AdaptiveCollectionConfig.swift */; };
 		D3BB0B0426628B5000D8DF7E /* ProductInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB0B0326628B5000D8DF7E /* ProductInfoCell.swift */; };
@@ -213,6 +217,10 @@
 		D3A6E82F2690A619000848DF /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
 		D3A6E8372690A637000848DF /* OrdersHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryVC.swift; sourceTree = "<group>"; };
 		D3A6E83C2690A64A000848DF /* BuyerPagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerPagerVC.swift; sourceTree = "<group>"; };
+		D3A6E84E2690BAE2000848DF /* CryptoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoVC.swift; sourceTree = "<group>"; };
+		D3A6E8532690BC7D000848DF /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		D3A6E8592690C01F000848DF /* CoinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinItem.swift; sourceTree = "<group>"; };
+		D3A6E8612690C068000848DF /* CoinItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinItem.xib; sourceTree = "<group>"; };
 		D3BB0AEC265BA98B00D8DF7E /* AdaptiveCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveCollectionLayout.swift; sourceTree = "<group>"; };
 		D3BB0AF1265BA9F000D8DF7E /* AdaptiveCollectionConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveCollectionConfig.swift; sourceTree = "<group>"; };
 		D3BB0B0326628B5000D8DF7E /* ProductInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoCell.swift; sourceTree = "<group>"; };
@@ -519,6 +527,23 @@
 			path = Buyer;
 			sourceTree = "<group>";
 		};
+		D3A6E84D2690BAB9000848DF /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				D3A6E84E2690BAE2000848DF /* CryptoVC.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		D3A6E8582690C007000848DF /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				D3A6E8592690C01F000848DF /* CoinItem.swift */,
+				D3A6E8612690C068000848DF /* CoinItem.xib */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
 		D3BB0B0226628B0C00D8DF7E /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -624,6 +649,7 @@
 		D3FDBE8D2655EDFC00923BA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3A6E84D2690BAB9000848DF /* Crypto */,
 				D3A6E82E2690A5BE000848DF /* Buyer */,
 				D3F3DFE12679F3790028140A /* Seller */,
 				D3F3DECA26725AE10028140A /* Auctions */,
@@ -656,6 +682,7 @@
 				D3F3DF6126775E1D0028140A /* CardModel.swift */,
 				D3F3DFF32679F57B0028140A /* OrderModel.swift */,
 				D3F3DFF82679F7BA0028140A /* OrderProductModel.swift */,
+				D3A6E8532690BC7D000848DF /* CoinModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -673,6 +700,7 @@
 		D3FDBE902655EE5500923BA9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D3A6E8582690C007000848DF /* Crypto */,
 				D3F3DFD32679ED350028140A /* MyOrder */,
 				D3F3DFB126798EDA0028140A /* MyList */,
 				D3F3DF66267761540028140A /* CardItem */,
@@ -858,6 +886,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3084DED2655E7CC00CDB793 /* LaunchScreen.storyboard in Resources */,
+				D3A6E8622690C068000848DF /* CoinItem.xib in Resources */,
 				D3F3DFB82679901A0028140A /* MyProductItem.xib in Resources */,
 				D3F3DF052673A8540028140A /* AuctionBidCell.xib in Resources */,
 				D33941EC266CFFFA0007F09F /* CartCell.xib in Resources */,
@@ -1097,6 +1126,7 @@
 				D3F3DEEC26728E4D0028140A /* AuctionTimerCell.swift in Sources */,
 				D35B0BAA26573FFA0075B00E /* CatModel.swift in Sources */,
 				D33941F2266E2A730007F09F /* ShippingAddressVC.swift in Sources */,
+				D3A6E84F2690BAE2000848DF /* CryptoVC.swift in Sources */,
 				D3F3DEE726728E080028140A /* BidPriceCell.swift in Sources */,
 				D3F3DF502673D42E0028140A /* PostAuctionVC.swift in Sources */,
 				D3084DE12655E7C500CDB793 /* AppDelegate.swift in Sources */,
@@ -1108,6 +1138,7 @@
 				D3BB0B142662963400D8DF7E /* PredictionProductDetailVC.swift in Sources */,
 				D3A6E81F268F7ACD000848DF /* ProductOrdersVC.swift in Sources */,
 				D35B0BD326574E020075B00E /* View.swift in Sources */,
+				D3A6E8542690BC7E000848DF /* CoinModel.swift in Sources */,
 				D35B0BB72657477D0075B00E /* ProductsTableCell.swift in Sources */,
 				D3F3DF372673B90B0028140A /* MyAuctionPagerVC.swift in Sources */,
 				D33941D9266B56470007F09F /* DBFav.swift in Sources */,
@@ -1131,6 +1162,7 @@
 				D35B0B9B265732250075B00E /* ProductCell.swift in Sources */,
 				D3FDBF072656923C00923BA9 /* RegisterVC.swift in Sources */,
 				D33942232670BC940007F09F /* CommentVC.swift in Sources */,
+				D3A6E85A2690C01F000848DF /* CoinItem.swift in Sources */,
 				D35B0B8C26572DD60075B00E /* ProductDetailVC.swift in Sources */,
 				D33942282670C5EF0007F09F /* MessageVC.swift in Sources */,
 				D3FDBEE22656069500923BA9 /* StringValidate.swift in Sources */,

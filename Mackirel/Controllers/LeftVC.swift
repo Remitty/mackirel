@@ -130,6 +130,9 @@ class LeftVC: UIViewController, UITableViewDelegate, UITableViewDataSource, chan
         let withdraw = storyboard?.instantiateViewController(withIdentifier: "WithdrawVC") as! WithdrawVC
         self.viewWithdraw = withdraw
         
+        let crypto = storyboard?.instantiateViewController(withIdentifier: "CryptoVC") as! CryptoVC
+        self.viewDepositCryptos = crypto
+        
     }
 
     func initializeOtherViews() {

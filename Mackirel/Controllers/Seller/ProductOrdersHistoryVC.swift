@@ -45,6 +45,9 @@ extension ProductOrdersHistoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         self.constantTableHeight.constant = CGFloat(historyList.count * 150)
+        if historyList.count > 0 {
+            self.lbEmpty.isHidden = true
+        }
         return historyList.count
     }
 

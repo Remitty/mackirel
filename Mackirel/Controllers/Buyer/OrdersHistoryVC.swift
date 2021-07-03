@@ -43,7 +43,9 @@ class OrdersHistoryVC: UIViewController, IndicatorInfoProvider, NVActivityIndica
 
 extension OrdersHistoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        if historyList.count > 0 {
+            self.lbEmpty.isHidden = true
+        }
         self.constantTableHeight.constant = CGFloat(historyList.count * 150)
         return historyList.count
     }

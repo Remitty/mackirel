@@ -4671,6 +4671,60 @@
             </objects>
             <point key="canvasLocation" x="341" y="7663"/>
         </scene>
+        <!--CryptoVC-->
+        <scene sceneID="xQJ-kR-aCl">
+            <objects>
+                <viewController storyboardIdentifier="CryptoVC" id="g74-f7-ZNx" customClass="CryptoVC" customModule="Mackirel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lcV-wt-Ysh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYT-Me-YNZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Coin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5je-2d-132">
+                                        <rect key="frame" x="170" y="436" width="74" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TPt-cj-Wub">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="818" id="BLn-PW-AZE"/>
+                                        </constraints>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="5je-2d-132" firstAttribute="centerX" secondItem="yYT-Me-YNZ" secondAttribute="centerX" id="21x-p9-qmv"/>
+                                    <constraint firstItem="5je-2d-132" firstAttribute="centerY" secondItem="yYT-Me-YNZ" secondAttribute="centerY" id="2hj-YR-6LC"/>
+                                    <constraint firstAttribute="trailing" secondItem="TPt-cj-Wub" secondAttribute="trailing" id="D07-TW-G4X"/>
+                                    <constraint firstItem="TPt-cj-Wub" firstAttribute="leading" secondItem="yYT-Me-YNZ" secondAttribute="leading" id="LKb-XG-3f3"/>
+                                    <constraint firstItem="TPt-cj-Wub" firstAttribute="top" secondItem="yYT-Me-YNZ" secondAttribute="top" id="qy8-1T-e7P"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Er2-uT-sAi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yYT-Me-YNZ" firstAttribute="leading" secondItem="Er2-uT-sAi" secondAttribute="leading" id="G4I-bP-AYL"/>
+                            <constraint firstAttribute="bottom" secondItem="yYT-Me-YNZ" secondAttribute="bottom" id="ID9-ge-Mnb"/>
+                            <constraint firstItem="yYT-Me-YNZ" firstAttribute="top" secondItem="lcV-wt-Ysh" secondAttribute="top" id="TMD-ge-Hx0"/>
+                            <constraint firstItem="yYT-Me-YNZ" firstAttribute="trailing" secondItem="Er2-uT-sAi" secondAttribute="trailing" id="fI5-OP-28r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="constantTableHeight" destination="BLn-PW-AZE" id="6DQ-7P-cMy"/>
+                        <outlet property="cryptoTable" destination="TPt-cj-Wub" id="jfH-qV-KfV"/>
+                        <outlet property="lbEmpty" destination="5je-2d-132" id="NmX-E0-srP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKn-bM-eSK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="8326"/>
+        </scene>
         <!--My ProductsVC-->
         <scene sceneID="fM7-p2-3Zq">
             <objects>
@@ -5684,8 +5738,8 @@
     <resources>
         <image name="User" width="50" height="50"/>
         <image name="arrowDown" width="50" height="50"/>
-        <image name="camera" width="50" height="50"/>
         <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="camera" width="50" height="50"/>
         <image name="cancel-music" width="32" height="32"/>
         <image name="car" width="940" height="627"/>
         <image name="cart" catalog="system" width="128" height="102"/>
