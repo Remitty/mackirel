@@ -35,7 +35,7 @@ struct ProductModel {
         id = dictionary["id"] as? Int
         title = dictionary["title"] as? String
         description = dictionary["description"] as? String
-//        date = dictionary["updated_at"] as? String
+        date = dictionary["updated_at"] as? String
         location = dictionary["location"] as? String
         address = dictionary["address"] as? String
         

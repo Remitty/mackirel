@@ -27,7 +27,7 @@ class WishlistVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
         
         dataArray = DBFav().getUserFavs()
         if dataArray.count > 0 {
@@ -35,13 +35,15 @@ class WishlistVC: UIViewController {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        self.navigationController?.isNavigationBarHidden = false
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.addLeftBarButtonWithImage(UIImage(named: "menu")!)
         
         if let layout = collectionView?.collectionViewLayout as? AdaptiveCollectionLayout {
           layout.delegate = self
@@ -59,12 +61,7 @@ extension WishlistVC: AdaptiveCollectionLayoutDelegate {
 }
 
 extension WishlistVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
-        
-        print(cell.frame.width)
-        return CGSize(width: collectionView.frame.width * 0.5 - 20, height: 210)
-    }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero

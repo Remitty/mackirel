@@ -74,7 +74,7 @@ class AdaptiveCollectionLayout: UICollectionViewLayout {
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
             let insetFrame = frame.insetBy(
                 dx: AdaptiveCollectionConfig.cellPadding,
-                dy: 0 //AdaptiveCollectionConfig.cellPadding
+                dy: AdaptiveCollectionConfig.cellPadding
             )
 
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)

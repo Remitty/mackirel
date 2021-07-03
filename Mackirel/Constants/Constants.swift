@@ -69,6 +69,14 @@ class Constants {
         static let CONFIRM_AUCTION = REDIRECT_URL + "auction/confirm"
         static let AUCTION_LIST = REDIRECT_URL + "auction/list"
         static let GET_AUCTION_DETAIL = REDIRECT_URL + "auction"
+        
+        static let REQUEST_CARD = REDIRECT_URL + "card";
+    
+        static let REQUEST_STRIPE_CONNECT = REDIRECT_URL + "stripe/connect";
+
+        static let GET_PLAID_LINK_TOKEN = REDIRECT_URL + "plaid/linktoken";
+        static let SEND_PLAID_CONNECT_BANK = REDIRECT_URL + "plaid/bank/create";
+        
              
     }
     

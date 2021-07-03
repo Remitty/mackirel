@@ -31,10 +31,6 @@ target 'Mackirel' do
     #Network
     pod 'Alamofire'
     
-    #Bar Button View
-    #pod 'XLPagerTabStrip', '~> 8.0'
-    pod 'XLPagerTabStrip', '~> 8.1'
-    
     
     # Star control
     ##pod 'Cosmos'
@@ -73,7 +69,7 @@ target 'Mackirel' do
     #ProgressBar
     pod 'RangeSeekSlider'
    
-   
+   pod 'XLPagerTabStrip', '~> 9.0'
     
     #Textfield Shake
     pod 'UITextField+Shake'
@@ -98,4 +94,8 @@ target 'Mackirel' do
     pod 'MaterialComponents/Cards'
     
     pod 'SQLite.swift', '~> 0.12.0'
+    
+    pod 'Stripe'
+    pod 'Plaid'
+    pod 'PayPalCheckout'
 end

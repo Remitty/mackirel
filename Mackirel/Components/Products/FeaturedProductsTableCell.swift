@@ -29,7 +29,7 @@ class FeaturedProductTableCell: UITableViewCell, UICollectionViewDelegate, UICol
     
     //MARK:- Properties
     var delegate: ProductsTableCellDelegate?
-    var dataArray = [ProductModel]()
+    var dataArray = [SimpleProductModel]()
     
     
     //MARK:- View Life Cycle

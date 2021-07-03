@@ -109,6 +109,27 @@ class LeftVC: UIViewController, UITableViewDelegate, UITableViewDataSource, chan
         let mainView = storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
         self.viewHome = mainView
         
+        let viewAuction = storyboard?.instantiateViewController(withIdentifier: "AuctionVC") as! AuctionVC
+        self.viewAuction = viewAuction
+        
+        let myAuction = storyboard?.instantiateViewController(withIdentifier: "MyAuctionPagerVC") as! MyAuctionPagerVC
+        self.viewMyAcutions = myAuction
+        
+        let view = storyboard?.instantiateViewController(withIdentifier: "SellerPagerVC") as! SellerPagerVC
+        self.viewMyLists = view
+        
+        let buyerview = storyboard?.instantiateViewController(withIdentifier: "BuyerPagerVC") as! BuyerPagerVC
+        self.viewMyOrders = buyerview
+        
+        let msgView = storyboard?.instantiateViewController(withIdentifier: "MessageVC") as! MessageVC
+        self.viewMessage = msgView
+        
+        let card = storyboard?.instantiateViewController(withIdentifier: "CardVC") as! CardVC
+        self.viewPayment = card
+        
+        let withdraw = storyboard?.instantiateViewController(withIdentifier: "WithdrawVC") as! WithdrawVC
+        self.viewWithdraw = withdraw
+        
     }
 
     func initializeOtherViews() {

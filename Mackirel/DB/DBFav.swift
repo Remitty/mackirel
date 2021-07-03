@@ -46,7 +46,7 @@ class DBFav {
         }
     }
     
-     func insertFav(product: ProductModel) -> Bool {
+     func insertFav(product: SimpleProductModel) -> Bool {
         do {
             let insert = tFavs.insert(
                 productId <- product.id,

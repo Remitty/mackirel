@@ -112,6 +112,8 @@ PODS:
   - NVActivityIndicatorView/Extended (5.1.1):
     - NVActivityIndicatorView/Base
   - OpalImagePicker (3.0.0)
+  - PayPalCheckout (0.46.0)
+  - Plaid (2.1.2)
   - PromisesObjC (1.2.12)
   - RadioGroup (1.4.3):
     - SweeterSwift
@@ -124,10 +126,13 @@ PODS:
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
+  - Stripe (21.5.1):
+    - Stripe/Stripe3DS2 (= 21.5.1)
+  - Stripe/Stripe3DS2 (21.5.1)
   - SweeterSwift (1.1.4)
   - SwiftCheckboxDialog (1.0.1)
   - "UITextField+Shake (1.2.1)"
-  - XLPagerTabStrip (8.1.1)
+  - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
@@ -147,14 +152,17 @@ DEPENDENCIES:
   - NotificationBannerSwift
   - NVActivityIndicatorView/Extended
   - OpalImagePicker
+  - PayPalCheckout
+  - Plaid
   - RadioGroup
   - RangeSeekSlider
   - SDWebImage
   - SlideMenuControllerSwift (from `https://github.com/AtomicSLLC/SlideMenuControllerSwift.git`, branch `swift5`)
   - SQLite.swift (~> 0.12.0)
+  - Stripe
   - SwiftCheckboxDialog
   - "UITextField+Shake"
-  - XLPagerTabStrip (~> 8.1)
+  - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
@@ -183,12 +191,15 @@ SPEC REPOS:
     - NotificationBannerSwift
     - NVActivityIndicatorView
     - OpalImagePicker
+    - PayPalCheckout
+    - Plaid
     - PromisesObjC
     - RadioGroup
     - RangeSeekSlider
     - SDWebImage
     - SnapKit
     - SQLite.swift
+    - Stripe
     - SweeterSwift
     - SwiftCheckboxDialog
     - "UITextField+Shake"
@@ -230,6 +241,8 @@ SPEC CHECKSUMS:
   NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
+  PayPalCheckout: 7687ab974fdbfee331618b5d472a98f6e90962af
+  Plaid: c02276ccc630a726a9ed790bf923d29839ff4017
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   RadioGroup: 7015c71759c90dbaae7050f33cfbc1de780e27a7
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
@@ -237,11 +250,12 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: d740ea24105a658fe6a8c256f2bf5832fee7c047
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  Stripe: 515db5536fd659b5d79a0898ce1b882b61ab597e
   SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
   SwiftCheckboxDialog: edfabc33371022c5c6ab0527a04b4d0f84bbe034
   "UITextField+Shake": 298ac5a0f239d731bdab999b19b628c956ca0ac3
-  XLPagerTabStrip: 63166e21c9844fa30f2d95d30f335e73be5caf22
+  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 96e3ee7f7e9094118dd092327862ebabb651e09a
+PODFILE CHECKSUM: ec30f46506804ac4e03191f680d1e9467ad1583e
 
 COCOAPODS: 1.10.1

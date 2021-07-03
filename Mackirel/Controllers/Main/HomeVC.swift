@@ -8,7 +8,7 @@ import UIKit
 import SlideMenuControllerSwift
 import NVActivityIndicatorView
 import UserNotifications
-import IQKeyboardManagerSwift
+//import IQKeyboardManagerSwift
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVActivityIndicatorViewable, UISearchBarDelegate, UNUserNotificationCenterDelegate, NearBySearchDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate {
     
@@ -34,15 +34,15 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
     
     
     
-    let keyboardManager = IQKeyboardManager.shared
+//    let keyboardManager = IQKeyboardManager.shared
     
     //MARK:- Properties
     
     var defaults = UserDefaults.standard
     
     var categoryArray = [CatModel]()
-    var featuredArray = [ProductModel]()
-    var latestArray = [ProductModel]()
+    var featuredArray = [SimpleProductModel]()
+    var latestArray = [SimpleProductModel]()
     var catLocationsArray = [CatModel]()
     var nearByAddsArray = [ProductModel]()
     
@@ -84,7 +84,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.navigationController?.isNavigationBarHidden = false
+        
         
         catsView.delegate = self
         
@@ -96,17 +96,14 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
         self.showLoader()
         self.homeData()
         self.addLeftBarButtonWithImage(UIImage(named: "menu")!)
-        self.navigationButtons()
+//        self.navigationButtons()
         //UserDefaults.standard.setValue("1", forKey: "langFirst")
     
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        if defaults.bool(forKey: "isGuest") || defaults.bool(forKey: "isLogin") == false {
-//            self.oltAddPost.isHidden = false
-//        }
-//          currentVc = self
+//        self.navigationController?.isNavigationBarHidden = false
     }
     
     
@@ -188,7 +185,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
     
     //MARK:- Search Controller
     @objc func actionSearch(_ sender: Any) {
-        keyboardManager.enable = true
+//        keyboardManager.enable = true
         if isNavSearchBarShowing {
             self.searchBarNavigation.text = ""
             self.backgroundView.removeFromSuperview()
@@ -379,13 +376,13 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
                 self.catsView.collectionView.reloadData()
             }
             
-            var product: ProductModel!
+            var product: SimpleProductModel!
             let featured = data["featured"] as! [String: Any]
             let latest = data["latest_ads"] as! [String: Any]
             if let temp = featured["products"] as? [[String: Any]] {
-                self.featuredArray = [ProductModel]()
+                self.featuredArray = [SimpleProductModel]()
                 for item in temp {
-                    product = ProductModel(fromDictionary: item)
+                    product = SimpleProductModel(fromDictionary: item)
                     self.featuredArray.append(product)
                 }
                 if self.featuredArray.count > 0 {
@@ -393,9 +390,9 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
                 }
             }
             if let temp = latest["products"] as? [[String: Any]] {
-                self.latestArray = [ProductModel]()
+                self.latestArray = [SimpleProductModel]()
                 for item in temp {
-                    product = ProductModel(fromDictionary: item)
+                    product = SimpleProductModel(fromDictionary: item)
                     self.latestArray.append(product)
                 }
                 if self.latestArray.count > 0 {
@@ -468,15 +465,15 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
                     
             self.animalSectionTitle = data["query"] as! String
             
-            var product: ProductModel!
+            var product: SimpleProductModel!
             
             if let featured = data["featured"] as? [[String: Any]] {
                 if self.pageNumber == 0 {
                     
-                    self.featuredArray = [ProductModel]()
+                    self.featuredArray = [SimpleProductModel]()
                 }
                 for item in featured {
-                    product = ProductModel(fromDictionary: item)
+                    product = SimpleProductModel(fromDictionary: item)
                     self.featuredArray.append(product)
                 }
                 
@@ -485,10 +482,10 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVAc
             if let latest = data["products"] as? [[String: Any]] {
                 if self.pageNumber == 0 {
                     
-                    self.latestArray = [ProductModel]()
+                    self.latestArray = [SimpleProductModel]()
                 }
                 for item in latest {
-                    product = ProductModel(fromDictionary: item)
+                    product = SimpleProductModel(fromDictionary: item)
                     self.latestArray.append(product)
                 }
                 

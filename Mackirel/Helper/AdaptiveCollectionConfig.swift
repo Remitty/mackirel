@@ -8,7 +8,7 @@ struct AdaptiveCollectionConfig {
         //Need in project detect padding/height for smaller devices than iPhone 6
         return UIDevice.isPhoneSE ? 190 : 210
     }
-    static let numberOfColumns = 3
+    static var numberOfColumns = 3
     static var cellPadding: CGFloat {
         return UIDevice.isPhoneSE ? 5 : 5
     }

@@ -66,10 +66,15 @@ class UploadImageVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     var isValidUrl = false
     
+    var isPostProduct = true
+    
+    
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.addLeftBarButtonWithImage(UIImage(named: "menu")!)
 //        self.showBackButton()
 //        self.hideKeyboard()
         
@@ -77,6 +82,21 @@ class UploadImageVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
         
         self.tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !self.isPostProduct {
+            self.navigationController?.isNavigationBarHidden = true
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if !self.isPostProduct {
+            self.navigationController?.isNavigationBarHidden = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -114,8 +134,15 @@ class UploadImageVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             let cell: UploadImageCell = tableView.dequeueReusableCell(withIdentifier: "UploadImageCell", for: indexPath) as! UploadImageCell
            
             cell.btnNext = { () in
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostProductVC") as! PostProductVC
-                self.navigationController?.pushViewController(vc, animated: true)
+                if self.isPostProduct {
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostProductVC") as! PostProductVC
+                    self.navigationController?.pushViewController(vc, animated: true)
+
+                } else {
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostAuctionVC") as! PostAuctionVC
+                    self.navigationController?.pushViewController(vc, animated: true)
+
+                }
             }
             cell.btnUploadImage = { () in
                 
@@ -170,8 +197,6 @@ class UploadImageVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             return cell
         }
             
-
-        
         return UITableViewCell()
     }
 

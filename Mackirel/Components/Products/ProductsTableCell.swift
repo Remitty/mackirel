@@ -39,7 +39,7 @@ class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollection
     
     //MARK:- Properties
     
-    var dataArray = [ProductModel]()
+    var dataArray = [SimpleProductModel]()
     var delegate : ProductsTableCellDelegate?
     
     var cell:  ProductCell!
@@ -48,6 +48,8 @@ class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollection
     var step = 0
 
     var btnViewAll :(()->())?
+    
+    var isHideFav = false
     
     //MARK:- View Life Cycle
     override func awakeFromNib() {
@@ -89,6 +91,11 @@ class ProductsTableCell: UITableViewCell, UICollectionViewDelegate, UICollection
         cell.btnActionFull = { () in
             self.delegate?.goToProductDetail(id: objData.id)
         }
+        
+        
+        self.cell.imgFav.isHidden = self.isHideFav
+        
+        
         cell.addFav = { () in
 //            self.delegate?.addFav(id: objData.id)
             if DBFav().insertFav(product: objData) {

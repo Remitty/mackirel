@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AuctionBidCell" rowHeight="89" id="4ZW-oL-f7x" customClass="AuctionBidCell" customModule="Mackirel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="451" height="89"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4ZW-oL-f7x" id="KwY-c0-f6k">
+                <rect key="frame" x="0.0" y="0.0" width="451" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-TX-TrB" customClass="MDCCard">
+                        <rect key="frame" x="2" y="2" width="447" height="85"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KM-V7-TWy">
+                                <rect key="frame" x="362" y="27.5" width="80" height="30"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="j12-82-iOW"/>
+                                    <constraint firstAttribute="width" constant="80" id="xhJ-4i-nbr"/>
+                                </constraints>
+                                <state key="normal" title="Bid">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionBid:" destination="4ZW-oL-f7x" eventType="primaryActionTriggered" id="0oO-e8-9GB"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Input Bid Price..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IZZ-us-9QF">
+                                <rect key="frame" x="5" y="22.5" width="347" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aPs-cL-e64"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4ZW-oL-f7x" id="Tdo-JT-izc"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5KM-V7-TWy" firstAttribute="leading" secondItem="IZZ-us-9QF" secondAttribute="trailing" constant="10" id="DkZ-t3-352"/>
+                            <constraint firstItem="5KM-V7-TWy" firstAttribute="centerY" secondItem="Jfi-TX-TrB" secondAttribute="centerY" id="dkk-ob-LSX"/>
+                            <constraint firstItem="IZZ-us-9QF" firstAttribute="centerY" secondItem="5KM-V7-TWy" secondAttribute="centerY" id="kZd-9d-dNv"/>
+                            <constraint firstAttribute="trailing" secondItem="5KM-V7-TWy" secondAttribute="trailing" constant="5" id="t31-vv-bsA"/>
+                            <constraint firstItem="IZZ-us-9QF" firstAttribute="leading" secondItem="Jfi-TX-TrB" secondAttribute="leading" constant="5" id="z6V-Uu-4lb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Jfi-TX-TrB" secondAttribute="bottom" constant="2" id="DTP-oF-Ne4"/>
+                    <constraint firstItem="Jfi-TX-TrB" firstAttribute="leading" secondItem="KwY-c0-f6k" secondAttribute="leading" constant="2" id="JoH-4g-eZY"/>
+                    <constraint firstAttribute="trailing" secondItem="Jfi-TX-TrB" secondAttribute="trailing" constant="2" id="rnO-kS-C7V"/>
+                    <constraint firstItem="Jfi-TX-TrB" firstAttribute="top" secondItem="KwY-c0-f6k" secondAttribute="top" constant="2" id="yqm-10-pgB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="txtBidPrice" destination="IZZ-us-9QF" id="J0H-FC-YhZ"/>
+            </connections>
+            <point key="canvasLocation" x="90.579710144927546" y="449.66517857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
