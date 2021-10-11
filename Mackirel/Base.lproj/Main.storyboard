@@ -241,7 +241,7 @@
             <objects>
                 <viewController storyboardIdentifier="RegisterVC" id="oA2-MJ-ak2" customClass="RegisterVC" customModule="Mackirel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="id5-NA-vpi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1k-Dy-dmb">
@@ -5641,7 +5641,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ha1-gC-0SL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w2P-RF-1Qe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -5698,7 +5697,6 @@
                     <tabBarItem key="tabBarItem" title="Sell" image="camera" catalog="system" id="YtR-Ve-qtS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7RA-o0-aCU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
